@@ -1,0 +1,25 @@
+name: PR Lint Check
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v6 
+        with:
+          node-version: '22'
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Linter
+        run: npm run lint
