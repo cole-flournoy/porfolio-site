@@ -1,22 +1,44 @@
-import linkedInLogo from './assets/linkedin_icon.svg'
-import gitHubLogo from './assets/github_icon.svg'
 import './App.css'
 
 function App() {
-
   return (
-    <>
-      <h1>Cole Flournoy</h1>
-      <p>Portfolio site coming soon!</p>
-      <div>
-        <a href="https://www.linkedin.com/in/cole-e-flournoy/" target="_blank">
-          <img src={linkedInLogo} className="logo" alt="LinkedIn logo" />
-        </a>
-        <a href="https://github.com/cole-flournoy" target="_blank">
-          <img src={gitHubLogo} className="logo" alt="GitHub logo" />
-        </a>
+    <div className='summary-grid-container'>
+      <div className='grid-top-row'>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
+          <div className='grid-section' style={{ height: '80%' }}>
+            ABOUT
+          </div>
+          <div className='grid-section' style={{ height: '20%' }}>
+            SOCIALS
+          </div>
+        </div>
+        
+        <div className='grid-section' style={{ width: '50%' }}>
+          EXPERIENCE
+        </div>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
+          <div className='grid-section' style={{ height: '60%' }}>
+            EDUCATION
+          </div>
+          <div className='grid-section' style={{ height: '40%' }}>
+            CONTACT
+          </div>
+        </div>
       </div>
-    </>
+      
+      <div className='grid-bottom-row'>
+        <div className='grid-section' style={{ width: '15%', height: '100%' }}>
+          SKILLS
+        </div>
+        <div className='grid-section' style={{ width: '15%', height: '100%' }}>
+          BUILD
+        </div>
+        <div className='grid-section' style={{ width: '70%', height: '100%' }}>
+          TESTIMONIALS
+        </div>
+      </div>
+    </div>
   )
 }
 
