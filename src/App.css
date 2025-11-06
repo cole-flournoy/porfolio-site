@@ -39,3 +39,21 @@
   border-radius: 15px;
   box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.5);
 } 
+
+.icon-button {
+  color: var(--color-light-text);
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  will-change: transform;
+  transition: transform 300ms;
+  
+  & .icon-fg {
+    color: var(--color-grid-background);
+  }
+}
+
+.icon-button:hover {
+  transform: scale(1.125);
+}

@@ -1,5 +1,6 @@
 import './App.css'
 import About from './sections/about'
+import Socials from './sections/Socials'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
             <About />
           </div>
           <div className='grid-section' style={{ height: '20%' }}>
-            SOCIALS
+            <Socials />
           </div>
         </div>
         
