@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import './App.css'
 import About from './sections/about'
 import Socials from './sections/Socials'
 
+export type HoveredSection = 'socials' | null;
+
 function App() {
+  const [hoveredSection, setHoveredSection] = useState<'socials' | null>(null);
+
   return (
     <div className='summary-grid-container'>
       <div className='grid-top-row'>
@@ -10,8 +15,8 @@ function App() {
           <div className='grid-section' style={{ height: '80%' }}>
             <About />
           </div>
-          <div className='grid-section' style={{ height: '20%' }}>
-            <Socials />
+          <div className='grid-section' style={{ height: '20%' }} onMouseEnter={() => setHoveredSection('socials')} onMouseLeave={() => setHoveredSection(null)}>
+            <Socials hoveredSection={hoveredSection}/>
           </div>
         </div>
         
