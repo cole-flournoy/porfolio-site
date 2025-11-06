@@ -1,4 +1,5 @@
 import './App.css'
+import About from './sections/about'
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       <div className='grid-top-row'>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
           <div className='grid-section' style={{ height: '80%' }}>
-            ABOUT
+            <About />
           </div>
           <div className='grid-section' style={{ height: '20%' }}>
             SOCIALS

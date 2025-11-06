@@ -33,7 +33,7 @@
 .grid-section {
   background-color: var(--color-grid-background);
   display: flex;
-  padding: 10px;
+  padding: 20px;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
