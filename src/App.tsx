@@ -4,10 +4,10 @@ import About from './sections/about'
 import Socials from './sections/Socials'
 import Education from './sections/Education';
 
-export type HoveredSection = 'socials' | null;
+export type HoveredSection = 'socials' | 'education' | null;
 
 function App() {
-  const [hoveredSection, setHoveredSection] = useState<'socials' | null>(null);
+  const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null);
 
   return (
     <div className='summary-grid-container'>
@@ -26,8 +26,8 @@ function App() {
         </div>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
-          <div className='grid-section' style={{ height: '60%' }}>
-            <Education />
+          <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => setHoveredSection('education')} onMouseLeave={() => setHoveredSection(null)}>
+            <Education hoveredSection={hoveredSection} />
           </div>
           <div className='grid-section' style={{ height: '40%' }}>
             CONTACT
