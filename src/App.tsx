@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import About from './sections/about'
 import Socials from './sections/Socials'
+import Education from './sections/Education';
 
 export type HoveredSection = 'socials' | null;
 
@@ -26,7 +27,7 @@ function App() {
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
           <div className='grid-section' style={{ height: '60%' }}>
-            EDUCATION
+            <Education />
           </div>
           <div className='grid-section' style={{ height: '40%' }}>
             CONTACT
