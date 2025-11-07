@@ -3,6 +3,7 @@ import './App.css'
 import About from './sections/about'
 import Socials from './sections/Socials'
 import Education from './sections/Education';
+import Contact from './sections/Contact';
 
 export type HoveredSection = 'socials' | 'education' | null;
 
@@ -30,7 +31,7 @@ function App() {
             <Education hoveredSection={hoveredSection} />
           </div>
           <div className='grid-section' style={{ height: '40%' }}>
-            CONTACT
+            <Contact />
           </div>
         </div>
       </div>
