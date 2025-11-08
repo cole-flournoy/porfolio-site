@@ -6,6 +6,7 @@ import Education from './sections/Education';
 import Contact from './sections/Contact';
 import Skills from './sections/Skills';
 import Build from './sections/Build';
+import Testmonials from './sections/Testimonials';
 
 export type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | null;
 
@@ -46,7 +47,7 @@ function App() {
           <Build hoveredSection={hoveredSection} />
         </div>
         <div className='grid-section' style={{ width: '70%' }}>
-          TESTIMONIALS
+          <Testmonials />
         </div>
       </div>
     </div>
