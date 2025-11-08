@@ -38,13 +38,13 @@ function App() {
       </div>
       
       <div className='grid-bottom-row'>
-        <div className='grid-section' style={{ width: '15%', height: '100%' }}>
+        <div className='grid-section' style={{ width: '15%' }}>
           <Skills />
         </div>
-        <div className='grid-section' style={{ width: '15%', height: '100%' }}>
+        <div className='grid-section' style={{ width: '15%' }}>
           BUILD
         </div>
-        <div className='grid-section' style={{ width: '70%', height: '100%' }}>
+        <div className='grid-section' style={{ width: '70%' }}>
           TESTIMONIALS
         </div>
       </div>
