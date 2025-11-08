@@ -7,7 +7,7 @@ import Contact from './sections/Contact';
 import Skills from './sections/Skills';
 import Build from './sections/Build';
 
-export type HoveredSection = 'socials' | 'education' | 'skills' | null;
+export type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | null;
 
 function App() {
   const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null);
@@ -42,8 +42,8 @@ function App() {
         <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => setHoveredSection('skills')} onMouseLeave={() => setHoveredSection(null)}>
           <Skills hoveredSection={hoveredSection} />
         </div>
-        <div className='grid-section' style={{ width: '15%' }}>
-          <Build />
+        <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => setHoveredSection('build')} onMouseLeave={() => setHoveredSection(null)}>
+          <Build hoveredSection={hoveredSection} />
         </div>
         <div className='grid-section' style={{ width: '70%' }}>
           TESTIMONIALS
