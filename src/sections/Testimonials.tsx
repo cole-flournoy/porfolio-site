@@ -1,5 +1,6 @@
 import { useState } from "react"
 import CaretRightIcon from '../assets/caret_right_icon.svg?react'
+import type { HoveredSection } from '../App'
 
 interface Testimonial {
   name: string;
@@ -37,8 +38,9 @@ const testimonialsArray: Testimonial[] = [
   }
 ]
 
-const Testmonials = () => {
+const Testmonials = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0)
+  const textColor = (hoveredSection === 'testimonials') ? 'var(--color-light-text)' : 'var(--color-slightly-faded-light-text)'
 
   const handleNextTestimonial = () => {
     setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length);
@@ -49,7 +51,7 @@ const Testmonials = () => {
   }
   
   return (
-    <span id='testimonials' style={{ display: 'grid', gridTemplateRows: '4fr 0fr', color: 'var(--color-slightly-faded-light-text)' }}>
+    <span id='testimonials' style={{ display: 'grid', gridTemplateRows: '4fr 0fr', color: textColor }}>
       <span style={{ display: 'grid', gridTemplateColumns: '0fr 1fr 0fr', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
         <CaretRightIcon className='icon' style={{ cursor: 'pointer', transform: 'rotate(180deg)' }} onClick={handlePrevTestimonial} />
         <span style={{ textAlign: 'center', lineHeight: '25px', fontSize: 'var(--text-size-subheader)' }}>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
