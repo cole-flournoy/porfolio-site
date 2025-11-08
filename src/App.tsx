@@ -5,6 +5,7 @@ import Socials from './sections/Socials'
 import Education from './sections/Education';
 import Contact from './sections/Contact';
 import Skills from './sections/Skills';
+import Build from './sections/Build';
 
 export type HoveredSection = 'socials' | 'education' | 'skills' | null;
 
@@ -42,7 +43,7 @@ function App() {
           <Skills hoveredSection={hoveredSection} />
         </div>
         <div className='grid-section' style={{ width: '15%' }}>
-          BUILD
+          <Build />
         </div>
         <div className='grid-section' style={{ width: '70%' }}>
           TESTIMONIALS
