@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './App.css'
-import About from './sections/about'
+import About from './sections/About'
 import Socials from './sections/Socials'
 import Education from './sections/Education';
 import Contact from './sections/Contact';
+import Skills from './sections/Skills';
 
 export type HoveredSection = 'socials' | 'education' | null;
 
@@ -38,7 +39,7 @@ function App() {
       
       <div className='grid-bottom-row'>
         <div className='grid-section' style={{ width: '15%', height: '100%' }}>
-          SKILLS
+          <Skills />
         </div>
         <div className='grid-section' style={{ width: '15%', height: '100%' }}>
           BUILD

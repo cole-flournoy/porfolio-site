@@ -48,14 +48,14 @@
   border: none;
   will-change: transform;
   transition: transform 300ms;
-  
-  & .icon-fg {
-    color: var(--color-grid-background);
-  }
 }
 
 .icon-button:hover {
   transform: scale(1.125);
+}
+
+.icon-fg {
+  color: var(--color-grid-background);
 }
 
 #contact {
@@ -75,4 +75,10 @@
 
 #contact:hover {
   transform: scale(1.05);
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  color: inherit;
 }
