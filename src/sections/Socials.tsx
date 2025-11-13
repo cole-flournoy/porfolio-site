@@ -3,18 +3,20 @@ import GitHubLogo from '../assets/github_icon.svg?react'
 import CodeIcon from '../assets/source_code_icon.svg?react'
 
 import type { HoveredSection } from '../App'
+import './styles/Socials.css'
 
 const Socials = ({hoveredSection}: { hoveredSection: HoveredSection }  ) => {
-  
-  if (hoveredSection !== 'socials') {
-    return (
-      <span id='socials' style={{ color: 'var(--color-faded-light-text)', fontSize: 'var(--text-size-header)', textAlign: 'center', letterSpacing: '5px' }}>
+  const isHovered = hoveredSection === 'socials'
+
+  return (
+    <span className={`socials ${isHovered ? 'hovered' : ''}`} style={{  }}>
+      {/* Starting view - label */}
+      <span className='socials-label' aria-hidden={isHovered ? 'true' : 'false'} style={{ }}>
         SOCIALS
-      </span>
-    )
-  } else {
-    return ( 
-      <span id='socials' style={{ display: 'flex', flexDirection: 'row', gap: '30px', alignItems: 'center', justifyContent: 'center'  }}>
+      </span> 
+      
+      {/* Hovered view - links */}
+      <span className='socials-links' aria-hidden={isHovered ? 'false' : 'true'} style={{ }}>
         <a href='https://www.linkedin.com/in/cole-e-flournoy/' target='_blank' style={{ display: 'flex' }}>
           <LinkedInLogo className='icon-button' />
         </a>
@@ -25,8 +27,9 @@ const Socials = ({hoveredSection}: { hoveredSection: HoveredSection }  ) => {
           <CodeIcon className='icon-button' />
         </a>
       </span>
-    );
-  }
+    </span>
+
+  )
 }
 
 export default Socials;

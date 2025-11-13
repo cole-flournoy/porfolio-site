@@ -21,7 +21,7 @@ function App() {
           <div className='grid-section' style={{ height: '80%' }}>
             <About />
           </div>
-          <div className='grid-section' style={{ height: '20%' }} onMouseEnter={() => setHoveredSection('socials')} onMouseLeave={() => setHoveredSection(null)}>
+          <div className='grid-section' style={{ height: '60px' }} onMouseEnter={() => setHoveredSection('socials')} onMouseLeave={() => setHoveredSection(null)}>
             <Socials hoveredSection={hoveredSection}/>
           </div>
         </div>

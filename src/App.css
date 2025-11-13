@@ -29,17 +29,18 @@
 } 
 
 .icon-button {
-  color: var(--color-light-text);
+  color: var(--color-slightly-faded-light-text);
   height: 35px;
   width: 35px;
   background-color: transparent;
   border: none;
-  will-change: transform;
-  transition: transform 300ms;
+  will-change: transform, color;
+  transition: transform 300ms, color 300ms;
 }
 
 .icon-button:hover {
   transform: scale(1.125);
+  color: var(--color-light-text);
 }
 
 .icon-fg {
@@ -70,3 +71,4 @@
   height: 35px;
   color: inherit;
 }
+
