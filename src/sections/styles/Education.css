@@ -1,0 +1,45 @@
+.education {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.education-label,
+.education-checklist {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education-label {
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+
+  /* Describes label entering view */
+
+}
+
+.education.hovered .education-label {
+  visibility: hidden;
+
+  /* Describes label exiting view */
+}
+
+.education-checklist {
+  gap: 15px;
+  align-items: flex-start;
+  padding: 10px;
+  visibility: hidden;
+
+  /* Describes checklist exiting view */
+}
+
+.education.hovered .education-checklist {
+  visibility: visible;
+
+  /* Describes checklist entering view */
+}
