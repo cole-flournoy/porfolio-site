@@ -20,7 +20,8 @@
   font-size: var(--text-size-header);
   letter-spacing: 5px;
 
-  transition: opacity 200ms ease, transform 200ms ease;
+  transition: opacity 800ms ease, transform 800ms ease;
+  transition-delay: 300ms;
   opacity: 1;
   transform: translateX(0);
   pointer-events: none;
@@ -29,6 +30,7 @@
 .socials.hovered .socials-label {
   opacity: 0;
   transform: translateX(-20px);
+  transition: opacity 300ms ease, transform 300ms ease;
 }
 
 .socials-links {
@@ -57,14 +59,19 @@
 .socials-links > * {
   opacity: 0;
   transform: translateX(20px);
-  transition: transform 300ms ease, opacity 300ms ease;
+  transition: transform 800ms ease, opacity 800ms ease;
   will-change: opacity, transform;
 }
-.socials.hovered .socials-links > * { opacity: 1; transform: translateX(0); }
+
+.socials.hovered .socials-links > * { 
+  opacity: 1; 
+  transform: translateX(0); 
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
 .socials.hovered .socials-links > *:nth-child(1) { transition-delay: 300ms; }
 .socials.hovered .socials-links > *:nth-child(2) { transition-delay: 350ms; }
 .socials.hovered .socials-links > *:nth-child(3) { transition-delay: 400ms; }
-
 
 
 @media (prefers-reduced-motion: reduce) {
