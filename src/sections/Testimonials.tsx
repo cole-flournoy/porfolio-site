@@ -1,5 +1,6 @@
 import { useState } from "react"
 import CaretRightIcon from '../assets/caret_right_icon.svg?react'
+import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
 import type { HoveredSection } from '../App'
 
 interface Testimonial {
@@ -53,9 +54,9 @@ const Testmonials = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
   return (
     <span id='testimonials' style={{ display: 'grid', gridTemplateRows: '4fr 0fr', color: textColor }}>
       <span style={{ display: 'grid', gridTemplateColumns: '0fr 1fr 0fr', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
-        <CaretRightIcon className='icon' style={{ cursor: 'pointer', transform: 'rotate(180deg)' }} onClick={handlePrevTestimonial} />
+        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} />
         <span style={{ textAlign: 'center', lineHeight: '25px', fontSize: 'var(--text-size-subheader)' }}>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
-        <CaretRightIcon className='icon' style={{ cursor: 'pointer' }} onClick={handleNextTestimonial} />
+        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} />
       </span>
       <span style={{ display: 'flex', flexDirection: 'column', textAlign: 'right', paddingRight: '40px', paddingTop: '10px' }}>
         <span style={{ fontSize: 'var(--text-size-medium)' }}>- {testimonialsArray[activeTestimonialIndex].name}</span>
