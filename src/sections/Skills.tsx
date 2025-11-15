@@ -12,13 +12,14 @@ import { useState } from 'react'
 type SkillName = 'TypeScript' | 'React.js' | 'Node.js' | 'PostgreSQL' | 'Git' | 'Jira' | 'Figma' | 'VSCode' | null;
 
 const Skills = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
-  const textColor = (hoveredSection === 'skills') ? 'var(--color-light-text)' : 'var(--color-faded-light-text)'
+  const isHovered = hoveredSection === 'skills'
+  const textColor = isHovered ? 'var(--color-light-text)' : 'var(--color-faded-light-text)'
   const [hoveredSkill, setHoveredSkill] = useState<SkillName>(null);
 
   const SkillIcon = ({ techName, iconComponent }: { techName: SkillName, iconComponent: React.JSX.Element }) => (
     <span style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseEnter={() => setHoveredSkill(techName)} onMouseLeave={() => setHoveredSkill(null)}>
       {iconComponent}
-      {(hoveredSkill === techName) && <span style={{ color: textColor, fontSize: 'var(--text-size-small)', position: 'absolute', bottom: '-18px' }}>{techName}</span>}
+      {(hoveredSkill === techName && isHovered) && <span style={{ color: textColor, fontSize: 'var(--text-size-small)', position: 'absolute', bottom: '-18px' }}>{techName}</span>}
     </span>
   )
 
