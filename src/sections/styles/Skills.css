@@ -29,3 +29,13 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .skills,
+  .skills.hovered {
+    transition: none;
+
+    .divider {
+      transition: none;
+    }
+  }
+}
