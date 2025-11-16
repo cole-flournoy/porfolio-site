@@ -1,8 +1,9 @@
 import Timeline from '../assets/timeline.svg?react'
+import './styles/Experience.css'
 
-const Experience = () => {
+const Experience = ({isHovered}: { isHovered: boolean }) => {
   return (
-    <span id='experience' style={{ display: 'flex', flexDirection: 'column', gap: '35px', alignItems: 'center', justifyContent: 'center' }}>
+    <span className={`experience ${isHovered ? 'hovered' : ''}`} style={{  }}>
       <span style={{ fontSize: 'var(--text-size-header)', letterSpacing: '5px', position: 'relative', textAlign: 'center' }}>
         FULL STACK DEVELOPER
         <span style={{ position: 'absolute', bottom: '-8px', left: '50%', transform: 'translate(-50.5%, -50%)', height: '1px', width: '88%', backgroundColor: 'var(--color-slightly-faded-light-text)' }}>

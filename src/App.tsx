@@ -9,7 +9,7 @@ import Build from './sections/Build';
 import Testmonials from './sections/Testimonials';
 import Experience from './sections/Experience';
 
-type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | null
+type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | 'experience' | null
 
 function App() {
   const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null);
@@ -26,8 +26,8 @@ function App() {
           </div>
         </div>
         
-        <div className='grid-section' style={{ width: '50%' }}>
-          <Experience />
+        <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => setHoveredSection('experience')} onMouseLeave={() => setHoveredSection(null)}>
+          <Experience isHovered={hoveredSection === 'experience'} />
         </div>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
