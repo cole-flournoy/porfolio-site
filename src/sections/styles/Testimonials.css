@@ -1,0 +1,98 @@
+/* TODO: Variables for maintainability */
+
+.testimonials {
+  position: relative;
+  height: 100%;
+  place-content: center;
+  color: var(--color-slightly-faded-light-text);
+  /* transition: color 300ms linear; */
+}
+
+/* .testimonials.hovered {
+  color: var(--color-light-text);
+  transition: color 300ms linear;
+} */
+
+.carousel-wrapper {
+  display: grid;
+  grid-template-columns: 0fr 1fr 0fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.quote {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  place-content: center;
+  view-transition-name: quote;
+}
+
+.quote .content {
+  text-align: center;
+  line-height: 25px;
+  font-size: var(--text-size-subheader);
+}
+
+.quote .attribution-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  right: 0;
+  bottom: 15px;
+}
+
+/* Carousel forward */
+html.next::view-transition-group(quote) {
+  clip-path: inset(0);
+}
+html.next::view-transition-old(quote) {
+  animation: next-exit 300ms ease both;
+}
+html.next::view-transition-new(quote) {
+  animation: next-enter 1200ms ease both;
+  animation-delay: 400ms;
+}
+
+@keyframes next-exit {
+  from { transform: translateX(0%); opacity: 1; }
+  to   { transform: translateX(-10%); opacity: 0; }
+}
+@keyframes next-enter {
+  from { transform: translateX(10%); opacity: 0; }
+  to   { transform: translateX(0%); opacity: 1; }
+}
+
+/* Carousel backward */
+html.prev::view-transition-group(quote) {
+  clip-path: inset(0);
+}
+html.prev::view-transition-old(quote) {
+  animation: prev-exit 300ms ease both;
+}
+html.prev::view-transition-new(quote) {
+  animation: prev-enter 1200ms ease both;
+  animation-delay: 400ms;
+}
+
+@keyframes prev-exit {
+  from { transform: translateX(0%); opacity: 1; }
+  to   { transform: translateX(10%); opacity: 0; }
+}
+@keyframes prev-enter {
+  from { transform: translateX(-10%); opacity: 0; }
+  to   { transform: translateX(0%); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.next::view-transition-old(quote),
+  html.next::view-transition-new(quote),
+  html.prev::view-transition-old(quote),
+  html.prev::view-transition-new(quote) {
+    animation: none;
+  }
+}

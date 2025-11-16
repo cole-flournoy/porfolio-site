@@ -30,6 +30,7 @@
 
 .icon-button {
   color: var(--color-slightly-faded-light-text);
+  cursor: pointer;
   height: 35px;
   width: 35px;
   background-color: transparent;

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import CaretRightIcon from '../assets/caret_right_icon.svg?react'
 import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
-import type { HoveredSection } from '../App'
+import './styles/Testimonials.css'
+import { flushSync } from "react-dom"
 
 interface Testimonial {
   name: string;
@@ -39,28 +40,51 @@ const testimonialsArray: Testimonial[] = [
   }
 ]
 
-const Testmonials = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
+const Testmonials = () => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0)
-  const textColor = (hoveredSection === 'testimonials') ? 'var(--color-light-text)' : 'var(--color-slightly-faded-light-text)'
+
+  // TODO: Add dots to indicate position in carousel 
 
   const handleNextTestimonial = () => {
-    setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length);
+    document.documentElement.classList.add('next')
+    
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length);
+      })
+    })
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('next');
+    })
   }
 
   const handlePrevTestimonial = () => {
-    setActiveTestimonialIndex((prevIndex) => (prevIndex - 1 + testimonialsArray.length) % testimonialsArray.length);
+    document.documentElement.classList.add('prev')
+    
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setActiveTestimonialIndex((prevIndex) => (prevIndex - 1 + testimonialsArray.length) % testimonialsArray.length);
+      })
+    })
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('prev');
+    })
   }
   
   return (
-    <span id='testimonials' style={{ display: 'grid', gridTemplateRows: '4fr 0fr', color: textColor }}>
-      <span style={{ display: 'grid', gridTemplateColumns: '0fr 1fr 0fr', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
-        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} />
-        <span style={{ textAlign: 'center', lineHeight: '25px', fontSize: 'var(--text-size-subheader)' }}>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
-        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} />
-      </span>
-      <span style={{ display: 'flex', flexDirection: 'column', textAlign: 'right', paddingRight: '40px', paddingTop: '10px' }}>
-        <span style={{ fontSize: 'var(--text-size-medium)' }}>- {testimonialsArray[activeTestimonialIndex].name}</span>
-        <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
+    <span className='testimonials'>
+      <span className='carousel-wrapper'>
+        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial}/>
+        <span className='quote'>
+          <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
+          <span className='attribution-wrapper'>
+            <span style={{ fontSize: 'var(--text-size-medium)' }}>- {testimonialsArray[activeTestimonialIndex].name}</span>
+            <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
+          </span>
+        </span>
+        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial}/>
       </span>
     </span>
   )

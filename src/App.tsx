@@ -48,7 +48,7 @@ function App() {
           <Build hoveredSection={hoveredSection} />
         </div>
         <div className='grid-section' style={{ width: '70%' }} onMouseEnter={() => setHoveredSection('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
-          <Testmonials hoveredSection={hoveredSection} />
+          <Testmonials />
         </div>
       </div>
     </div>

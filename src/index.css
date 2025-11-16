@@ -17,6 +17,8 @@
   font-style: normal;
   color: var(--color-light-text);
   background-color: var(--color-dark-background);
+  
+  view-transition-name: none;
 
   /* font-synthesis: none;
   text-rendering: optimizeLegibility;
