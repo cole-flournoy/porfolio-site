@@ -9,7 +9,7 @@ import Build from './sections/Build';
 import Testmonials from './sections/Testimonials';
 import Experience from './sections/Experience';
 
-export type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | null;
+type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | null
 
 function App() {
   const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null);
@@ -22,7 +22,7 @@ function App() {
             <About />
           </div>
           <div className='grid-section' style={{ height: '60px' }} onMouseEnter={() => setHoveredSection('socials')} onMouseLeave={() => setHoveredSection(null)}>
-            <Socials hoveredSection={hoveredSection}/>
+            <Socials isHovered={hoveredSection === 'socials'}/>
           </div>
         </div>
         
@@ -32,7 +32,7 @@ function App() {
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
           <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => setHoveredSection('education')} onMouseLeave={() => setHoveredSection(null)}>
-            <Education hoveredSection={hoveredSection} />
+            <Education isHovered={hoveredSection === 'education'} />
           </div>
           <div className='grid-section' style={{ height: '40%' }}>
             <Contact />
@@ -42,10 +42,10 @@ function App() {
       
       <div className='grid-bottom-row'>
         <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => setHoveredSection('skills')} onMouseLeave={() => setHoveredSection(null)}>
-          <Skills hoveredSection={hoveredSection} />
+          <Skills isHovered={hoveredSection === 'skills'} />
         </div>
         <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => setHoveredSection('build')} onMouseLeave={() => setHoveredSection(null)}>
-          <Build hoveredSection={hoveredSection} />
+          <Build isHovered={hoveredSection === 'build'} />
         </div>
         <div className='grid-section' style={{ width: '70%' }} onMouseEnter={() => setHoveredSection('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
           <Testmonials />

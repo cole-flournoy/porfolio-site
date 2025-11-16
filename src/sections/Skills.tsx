@@ -6,14 +6,12 @@ import GitLogo from '../assets/tech_icons/git_logo.svg?react'
 import JiraLogo from '../assets/tech_icons/jira_logo.svg?react'
 import FigmaLogo from '../assets/tech_icons/figma_logo.svg?react'
 import VSCodeLogo from '../assets/tech_icons/vscode_logo.svg?react'
-import type { HoveredSection } from '../App'
 import { useState } from 'react'
 import './styles/Skills.css'
 
 type SkillName = 'TypeScript' | 'React.js' | 'Node.js' | 'PostgreSQL' | 'Git' | 'Jira' | 'Figma' | 'VSCode' | null
 
-const Skills = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
-  const isHovered = hoveredSection === 'skills'
+const Skills = ({isHovered}: { isHovered: boolean }) => {
   const [hoveredSkill, setHoveredSkill] = useState<SkillName>(null)
 
   const SkillIcon = ({ techName, iconComponent }: { techName: SkillName, iconComponent: React.JSX.Element }) => (

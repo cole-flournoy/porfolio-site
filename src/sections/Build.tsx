@@ -1,11 +1,8 @@
 import WebpagesIcon from '../assets/tech_icons/webpages_icon.svg?react'
-import type { HoveredSection } from '../App'
 import './styles/Build.css'
 
 
-const Build = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
-  const isHovered = hoveredSection === 'build';
-  
+const Build = ({isHovered}: { isHovered: boolean }) => {
   return (
     <span className={`build ${isHovered ? 'hovered' : ''}`} >
       <span className='build-label' aria-hidden={isHovered ? 'true' : 'false'}>

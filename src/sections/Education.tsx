@@ -1,11 +1,8 @@
 import GraduationIcon from '../assets/graduation_icon.svg?react'
 import CheckBoxIcon from '../assets/check_box_icon.svg?react'
-import type { HoveredSection } from '../App'
 import './styles/Education.css'
 
-const Education = ({hoveredSection}: { hoveredSection: HoveredSection }) => {
-  const isHovered = hoveredSection === 'education'
-  
+const Education = ({isHovered}: { isHovered: boolean }) => {
   return (
     <span className={`education ${isHovered ? 'hovered' : ''}`} style={{ }}>
       {/* Starting view - label */}

@@ -1,13 +1,9 @@
 import LinkedInLogo from '../assets/linkedin_icon.svg?react'
 import GitHubLogo from '../assets/github_icon.svg?react'
 import CodeIcon from '../assets/source_code_icon.svg?react'
-
-import type { HoveredSection } from '../App'
 import './styles/Socials.css'
 
-const Socials = ({hoveredSection}: { hoveredSection: HoveredSection }  ) => {
-  const isHovered = hoveredSection === 'socials'
-
+const Socials = ({isHovered}: { isHovered: boolean }  ) => {
   return (
     <span className={`socials ${isHovered ? 'hovered' : ''}`} style={{  }}>
       {/* Starting view - label */}
@@ -32,4 +28,4 @@ const Socials = ({hoveredSection}: { hoveredSection: HoveredSection }  ) => {
   )
 }
 
-export default Socials;
+export default Socials
