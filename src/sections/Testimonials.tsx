@@ -43,19 +43,20 @@ const testimonialsArray: Testimonial[] = [
 const Testmonials = () => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0)
 
-  // TODO: Add dots to indicate position in carousel 
+  // TODO: Add auto-scroll?
+  // TODO: Add arrow key navigation
 
   const handleNextTestimonial = () => {
     document.documentElement.classList.add('next')
     
     const transition = document.startViewTransition(() => {
       flushSync(() => {
-        setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length);
+        setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length)
       })
     })
 
     transition.finished.finally(() => {
-      document.documentElement.classList.remove('next');
+      document.documentElement.classList.remove('next')
     })
   }
 
@@ -64,18 +65,39 @@ const Testmonials = () => {
     
     const transition = document.startViewTransition(() => {
       flushSync(() => {
-        setActiveTestimonialIndex((prevIndex) => (prevIndex - 1 + testimonialsArray.length) % testimonialsArray.length);
+        setActiveTestimonialIndex((prevIndex) => (prevIndex - 1 + testimonialsArray.length) % testimonialsArray.length)
       })
     })
 
     transition.finished.finally(() => {
-      document.documentElement.classList.remove('prev');
+      document.documentElement.classList.remove('prev')
+    })
+  }
+
+  const handleDotNavigation = (index: number) => {
+    if (index === activeTestimonialIndex) return;
+    const direction = index > activeTestimonialIndex ? 'next' : 'prev'
+    document.documentElement.classList.add(direction)
+    
+    const transition = document.startViewTransition(() => {
+      flushSync(() => {
+        setActiveTestimonialIndex(index)
+      })
+    })
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove(direction)
     })
   }
   
   return (
     <span className='testimonials'>
       <span className='carousel-wrapper'>
+        <span className='dots-wrapper'>
+          {testimonialsArray.map((_, index) => (
+            <span key={index} className={`dot ${index === activeTestimonialIndex ? 'active' : ''}`} onClick={() => handleDotNavigation(index)} />
+          ))}
+        </span>
         <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} style={{ height: '100%' }}/>
         <span className='quote'>
           <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
