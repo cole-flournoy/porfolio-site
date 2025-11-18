@@ -76,7 +76,7 @@ const Testmonials = () => {
   return (
     <span className='testimonials'>
       <span className='carousel-wrapper'>
-        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial}/>
+        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} style={{ height: '100%' }}/>
         <span className='quote'>
           <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
           <span className='attribution-wrapper'>
@@ -84,7 +84,7 @@ const Testmonials = () => {
             <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
           </span>
         </span>
-        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial}/>
+        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} style={{ height: '100%' }}/>
       </span>
     </span>
   )
