@@ -11,11 +11,11 @@
 
   /* Describes transition back to label */
   color: var(--color-faded-light-text);
-  transition: color 600ms linear;
+  transition: color 300ms linear;
 
   .divider {
     background-color: var(--color-faded-light-text);
-    transition: background-color 600ms linear;
+    transition: background-color 300ms linear;
   }
 }
 
