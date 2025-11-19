@@ -11,7 +11,7 @@ const Experience = ({isHovered}: { isHovered: boolean }) => {
           <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'inherit', borderRadius: '50%', zIndex: 10 }}></span> 
         </span> 
       </span>
-      <Timeline style={{ width: '100%', height: '100%' }} />
+      <Timeline className='timeline' style={{ }} />
     </span>
   )
 }

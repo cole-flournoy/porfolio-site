@@ -26,7 +26,7 @@ function App() {
           </div>
         </div>
         
-        <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => setHoveredSection('experience')} onMouseLeave={() => setHoveredSection(null)}>
+        <div className='grid-section experience-section' style={{ width: '50%' }} onMouseEnter={() => setHoveredSection('experience')} onMouseLeave={() => setHoveredSection(null)}>
           <Experience isHovered={hoveredSection === 'experience'} />
         </div>
         
