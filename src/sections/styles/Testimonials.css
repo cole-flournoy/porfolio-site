@@ -1,17 +1,13 @@
 /* TODO: Variables for maintainability */
 
 .testimonials {
+  --custom-mid-opacity: color-mix(in srgb, var(--color-light-text) 65%, transparent);
+
   position: relative;
   height: 100%;
   place-content: center;
   color: var(--color-slightly-faded-light-text);
-  /* transition: color 300ms linear; */
 }
-
-/* .testimonials.hovered {
-  color: var(--color-light-text);
-  transition: color 300ms linear;
-} */
 
 .carousel-wrapper {
   display: grid;
@@ -29,7 +25,7 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
-  gap: 20px;
+  gap: 15px;
   top: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -40,16 +36,18 @@
   width: 10px;
   border-radius: 10%;
   background-color: var(--color-faded-light-text);
-  transition: all 1600ms ease;
+  transition: 
+    transform 1600ms ease, 
+    background-color 1600ms ease;
 }
 
 .dot.active {
   transform: scale(1.5);
-  background-color: var(--color-slightly-faded-light-text);
+  background-color: var(--custom-mid-opacity);
 }
 
 .dot:not(.active):hover {
-  background-color: var(--color-slightly-faded-light-text);
+  background-color: var(--custom-mid-opacity);
   cursor: pointer;
   transition: background-color 300ms ease;
 }
@@ -127,4 +125,13 @@ html.prev::view-transition-new(quote) {
   html.prev::view-transition-new(quote) {
     animation: none;
   }
+}
+
+.testimonials .icon-button {
+  height: 100%;
+  color: var(--custom-mid-opacity);
+}
+
+.testimonials .icon-button:hover {
+  color: var(--color-slightly-faded-light-text);
 }

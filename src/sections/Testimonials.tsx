@@ -98,7 +98,7 @@ const Testmonials = () => {
             <span key={index} className={`dot ${index === activeTestimonialIndex ? 'active' : ''}`} onClick={() => handleDotNavigation(index)} />
           ))}
         </span>
-        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} style={{ height: '100%' }}/>
+        <CaretLeftIcon className='icon-button' onClick={handlePrevTestimonial} style={{ }}/>
         <span className='quote'>
           <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
           <span className='attribution-wrapper'>
@@ -106,7 +106,7 @@ const Testmonials = () => {
             <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
           </span>
         </span>
-        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} style={{ height: '100%' }}/>
+        <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} style={{ }}/>
       </span>
     </span>
   )
