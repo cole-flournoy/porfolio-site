@@ -125,6 +125,15 @@ html.prev::view-transition-new(quote) {
   html.prev::view-transition-new(quote) {
     animation: none;
   }
+  
+  .dot,
+  .icon-button {
+    transition: none;
+  }
+
+  .quote {
+    view-transition-name: none;
+  }
 }
 
 .testimonials .icon-button {

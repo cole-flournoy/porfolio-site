@@ -89,4 +89,5 @@
   .socials-links,
   .socials-links > * { transition: none !important; transform: none !important; }
   .socials-links { visibility: visible; opacity: 1; pointer-events: auto; }
+  .icon { transition: none !important; }
 }
