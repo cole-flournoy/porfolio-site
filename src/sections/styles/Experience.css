@@ -9,12 +9,12 @@
 .timeline {
   width: 100%;
   height: 100%;
-  color: var(--color-light-text);
+  color: var(--color-slightly-faded-light-text);
   transition: color 300ms linear;
 }
 
 .experience-section:hover .timeline{
-  color: color-mix(in srgb, var(--color-light-text) 54%, white 46%)
+  color: color-mix(in srgb, var(--color-light-text) 54%, white 46%);
 }
 
 /* .ribbon-shape {
