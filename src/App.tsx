@@ -34,7 +34,7 @@ function App() {
           <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => setHoveredSection('education')} onMouseLeave={() => setHoveredSection(null)}>
             <Education isHovered={hoveredSection === 'education'} />
           </div>
-          <div className='grid-section' style={{ height: '40%' }}>
+          <div className='grid-section contact-section' style={{ height: '40%' }}>
             <Contact />
           </div>
         </div>
