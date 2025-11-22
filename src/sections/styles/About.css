@@ -16,6 +16,7 @@
   align-items: center;
   border: 5px solid var(--color-faded-light-text);
   margin-bottom: 5px;
+  pointer-events: none;
 }
 
 .headshot img {
