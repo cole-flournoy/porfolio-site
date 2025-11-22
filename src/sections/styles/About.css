@@ -1,0 +1,26 @@
+.about {
+  --responsive-headshot-container-size: clamp(120px, calc(15vw), 150px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.headshot {
+  width: var(--responsive-headshot-container-size);
+  height: var(--responsive-headshot-container-size);
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--color-faded-light-text);
+  margin-bottom: 5px;
+  pointer-events: none;
+}
+
+.headshot img {
+  width: calc(var(--responsive-headshot-container-size) + 75px);
+  height: calc(var(--responsive-headshot-container-size) + 75px);
+  transform: translateY(-5px);
+}

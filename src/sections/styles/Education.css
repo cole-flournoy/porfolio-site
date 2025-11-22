@@ -1,0 +1,106 @@
+/* TODO: consolidate with variables or Socials styles */
+
+.education {
+  --scalable-icon-size: clamp(15px, 2.4vw, 25px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.education-label,
+.education-checklist {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education-label {
+  gap: 5px;
+  align-items: center;
+
+  /* Describes label entering view */
+  transition: opacity 800ms ease, transform 800ms ease;
+  transition-delay: 300ms;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: none;
+}
+
+.education.hovered .education-label {
+  /* Describes label exiting view */
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.education-checklist {
+  gap: 15px;
+  align-items: flex-start;
+  padding: 10px;
+  
+  /* Describes checklist exiting view */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(40px);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s linear 300ms;
+}
+
+.education.hovered .education-checklist {
+  /* Describes checklist entering view */
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s linear 0s;
+}
+
+.education-checklist > * {
+  /* Describes each checklist item exiting view */
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 800ms ease, opacity 800ms ease;
+}
+
+.education.hovered .education-checklist > * {
+  /* Describes each checklist item entering view */
+  opacity: 1; 
+  transform: translateX(0); 
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+/* Stagger checklist items on entrance */
+.education.hovered .education-checklist > *:nth-child(1) { transition-delay: 300ms; }
+.education.hovered .education-checklist > *:nth-child(2) { transition-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .education-label,
+  .education-checklist,
+  .education-checklist > * { transition: none !important; transform: none !important; }
+  .education-checklist { visibility: visible; opacity: 1; pointer-events: auto; }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--text-size-subheader);
+  color: var(--color-light-text);
+  gap: 15px;
+}
+
+.checkbox-icon {
+  flex-shrink: 0;
+  width: var(--scalable-icon-size);
+  height: var(--scalable-icon-size);
+  color: var(--color-light-text);
+}

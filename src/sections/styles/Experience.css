@@ -1,0 +1,42 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.timeline {
+  width: 100%;
+  height: 100%;
+  color: var(--color-slightly-faded-light-text);
+  transition: color 300ms linear;
+}
+
+.experience-section:hover .timeline{
+  color: color-mix(in srgb, var(--color-light-text) 54%, white 46%);
+}
+
+/* .ribbon-shape {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.experience.hovered .ribbon-shape {
+  animation: spin 30s ease-out 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline {
+    transition: none;
+  }
+}
