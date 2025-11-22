@@ -5,10 +5,10 @@ import './styles/Testimonials.css'
 import { flushSync } from "react-dom"
 
 interface Testimonial {
-  name: string;
-  relationship: string;
-  quote: string;
-  highlight?: string;
+  name: string
+  relationship: string
+  quote: string
+  highlight?: string
 }
 
 type CarouselDirection = 'next' | 'prev'
@@ -71,11 +71,6 @@ const Testmonials = () => {
       quoteEl?.addEventListener('transitionend', handleEnd, { once: true })
       return
     }
-    
-    // if (!startViewTransition) {
-    //   update()
-    //   return
-    // }
 
     document.documentElement.classList.add(direction)
 
