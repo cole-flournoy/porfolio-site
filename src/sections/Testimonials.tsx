@@ -51,12 +51,31 @@ const Testmonials = () => {
 
   const runViewTransition = (direction: CarouselDirection, update: () => void) => {
     const startViewTransition = (document as any).startViewTransition?.bind(document)
-
+    
     // Fallback for browsers that don't support View Transitions API
+    const quoteEl = document.querySelector('.quote') as HTMLElement | null
     if (!startViewTransition) {
-      update()
+      quoteEl?.classList.add('fallback-fade-out')
+
+      const handleEnd = () => {
+        quoteEl?.removeEventListener('transitionend', handleEnd)
+        update()
+        quoteEl?.classList.remove('fallback-fade-out')
+        quoteEl?.classList.add('fallback-fade-in')
+
+        quoteEl?.addEventListener('transitionend', () => {
+          quoteEl.classList.remove('fallback-fade-in')
+        }, { once: true })
+      }
+
+      quoteEl?.addEventListener('transitionend', handleEnd, { once: true })
       return
     }
+    
+    // if (!startViewTransition) {
+    //   update()
+    //   return
+    // }
 
     document.documentElement.classList.add(direction)
 

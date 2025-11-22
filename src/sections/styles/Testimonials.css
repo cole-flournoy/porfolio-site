@@ -61,6 +61,17 @@
   display: flex;
   flex-direction: column;
   view-transition-name: quote;
+
+  /* Fallback for View Transition */
+  transition: opacity 800ms ease;
+}
+
+.quote.fallback-fade-out {
+  opacity: 0;
+}
+
+.quote.fallback-fade-in {
+  opacity: 1;
 }
 
 .quote .content {
