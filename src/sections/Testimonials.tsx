@@ -50,7 +50,7 @@ const Testmonials = () => {
   // TODO: Add arrow key navigation
 
   const runViewTransition = (direction: CarouselDirection, update: () => void) => {
-    const startViewTransition = (document as any).startViewTransition?.bind(document)
+    const startViewTransition = document.startViewTransition?.bind(document)
     
     // Fallback for browsers that don't support View Transitions API
     const quoteEl = document.querySelector('.quote') as HTMLElement | null
