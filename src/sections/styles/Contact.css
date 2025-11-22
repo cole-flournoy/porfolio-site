@@ -1,10 +1,12 @@
 .contact {
+  --scalable-padding-vertical: clamp(5px, .7vw, 10px);
+
   position: relative;
   text-decoration: none;
   color: var(--color-light-text);
   text-align: center;
   border-radius: 25px;
-  padding: 10px 18px;
+  padding: var(--scalable-padding-vertical) 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +37,7 @@
   .contact {
     transition: none;
   }
-  
+
   .contact-section:hover .contact {
     transform: none;
   }
