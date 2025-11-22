@@ -6,12 +6,12 @@ const Build = ({isHovered}: { isHovered: boolean }) => {
   return (
     <span className={`build ${isHovered ? 'hovered' : ''}`} onClick={() => isHovered ? window.open('https://github.com/cole-flournoy/portfolio-site?tab=readme-ov-file#portfolio-website', '_blank') : undefined}>
       <span className='build-label' aria-hidden={isHovered ? 'true' : 'false'}>
-        <WebpagesIcon style={{ width: '100px', height: '100px' }} />
+        <WebpagesIcon style={{ width: 'var(--icon-size-large)', height: 'var(--icon-size-large)' }} />
         SITE BUILD
       </span>
 
       <span className='build-detail' aria-hidden={isHovered ? 'false' : 'true'}>
-        CURIOUS ABOUT THIS SITE?
+        READ THE BUILD DOC
       </span>
     </span>
   )

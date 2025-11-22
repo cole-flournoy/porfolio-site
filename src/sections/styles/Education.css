@@ -1,6 +1,7 @@
 /* TODO: consolidate with variables or Socials styles */
 
 .education {
+  --scalable-icon-size: clamp(15px, 2.4vw, 25px);
   position: relative;
   width: 100%;
   height: 100%;
@@ -88,4 +89,19 @@
   .education-checklist,
   .education-checklist > * { transition: none !important; transform: none !important; }
   .education-checklist { visibility: visible; opacity: 1; pointer-events: auto; }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--text-size-subheader);
+  color: var(--color-light-text);
+  gap: 15px;
+}
+
+.checkbox-icon {
+  flex-shrink: 0;
+  width: var(--scalable-icon-size);
+  height: var(--scalable-icon-size);
+  color: var(--color-light-text);
 }

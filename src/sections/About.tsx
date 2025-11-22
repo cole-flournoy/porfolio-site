@@ -1,12 +1,13 @@
 import headshot from '../assets/portfolio_headshot.jpg'
+import './styles/About.css'
 
 const About = () => {
   return (
-    <span id="about" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ width: '150px', height: '150px', overflow: 'hidden', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '5px solid var(--color-faded-light-text)', marginBottom: '5px' }}>
-        <img src={headshot} alt="Cole Flournoy headshot" style={{ width: '235px', height: '235px', transform: 'translateY(-5px)' }} />
+    <span className='about'>
+      <div className='headshot'>
+        <img src={headshot} alt="Cole Flournoy headshot" style={{  }} />
       </div>
-      <span style={{ fontSize: 'var(--text-size-header)', textAlign: 'center' }}>
+      <span style={{ fontSize: 'var(--text-size-header)', textWrap: 'nowrap' }}>
         Cole Flournoy
       </span>
       <span style={{ fontSize: 'var(--text-size-subheader)', color: 'var(--color-slightly-faded-light-text)' }}>

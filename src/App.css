@@ -5,7 +5,7 @@
 .summary-grid-container {
   --section-gap: 20px;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr minmax(270px, 1fr);
   row-gap: var(--section-gap);
   width: min(1200px, calc(100vw - 6rem));
   height: min(90vh, 700px);
@@ -21,7 +21,7 @@
 .grid-section {
   background-color: var(--color-grid-background);
   display: flex;
-  padding: 20px;
+  padding: clamp(12px, calc(1.5vw), 20px);
   align-items: center;
   justify-content: center;
   border-radius: 15px;
@@ -31,8 +31,8 @@
 .icon-button {
   color: var(--color-slightly-faded-light-text);
   cursor: pointer;
-  height: 35px;
-  width: 35px;
+  height: var(--icon-size-standard);
+  width: var(--icon-size-standard);
   background-color: transparent;
   border: none;
   will-change: transform, color;
@@ -49,8 +49,8 @@
 }
 
 .icon {
-  width: 35px;
-  height: 35px;
+  width: var(--icon-size-standard);
+  height: var(--icon-size-standard);
   color: inherit;
 }
 
