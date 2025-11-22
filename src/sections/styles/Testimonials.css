@@ -58,6 +58,8 @@
   text-align: center;
   height: 100%;
   place-content: center;
+  display: flex;
+  flex-direction: column;
   view-transition-name: quote;
 }
 
@@ -125,7 +127,7 @@ html.prev::view-transition-new(quote) {
   html.prev::view-transition-new(quote) {
     animation: none;
   }
-  
+
   .dot,
   .icon-button {
     transition: none;
