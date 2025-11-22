@@ -14,7 +14,7 @@ const About = () => {
         Atlanta, GA
       </span>
     </span>
-  );
+  )
 }
 
-export default About;
+export default About

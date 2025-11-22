@@ -5,11 +5,13 @@ import './styles/Testimonials.css'
 import { flushSync } from "react-dom"
 
 interface Testimonial {
-  name: string;
-  relationship: string;
-  quote: string;
-  highlight?: string;
+  name: string
+  relationship: string
+  quote: string
+  highlight?: string
 }
+
+type CarouselDirection = 'next' | 'prev'
 
 const testimonialsArray: Testimonial[] = [
   {
@@ -40,49 +42,40 @@ const testimonialsArray: Testimonial[] = [
   }
 ]
 
+
 const Testmonials = () => {
   const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0)
 
   // TODO: Add auto-scroll?
   // TODO: Add arrow key navigation
 
-  const handleNextTestimonial = () => {
-    document.documentElement.classList.add('next')
+  const runViewTransition = (direction: CarouselDirection, update: () => void) => {
+    const startViewTransition = document.startViewTransition?.bind(document)
     
-    const transition = document.startViewTransition(() => {
-      flushSync(() => {
-        setActiveTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonialsArray.length)
-      })
-    })
+    // Fallback for browsers that don't support View Transitions API
+    const quoteEl = document.querySelector('.quote') as HTMLElement | null
+    if (!startViewTransition) {
+      quoteEl?.classList.add('fallback-fade-out')
 
-    transition.finished.finally(() => {
-      document.documentElement.classList.remove('next')
-    })
-  }
+      const handleEnd = () => {
+        quoteEl?.removeEventListener('transitionend', handleEnd)
+        update()
+        quoteEl?.classList.remove('fallback-fade-out')
+        quoteEl?.classList.add('fallback-fade-in')
 
-  const handlePrevTestimonial = () => {
-    document.documentElement.classList.add('prev')
-    
-    const transition = document.startViewTransition(() => {
-      flushSync(() => {
-        setActiveTestimonialIndex((prevIndex) => (prevIndex - 1 + testimonialsArray.length) % testimonialsArray.length)
-      })
-    })
+        quoteEl?.addEventListener('transitionend', () => {
+          quoteEl.classList.remove('fallback-fade-in')
+        }, { once: true })
+      }
 
-    transition.finished.finally(() => {
-      document.documentElement.classList.remove('prev')
-    })
-  }
+      quoteEl?.addEventListener('transitionend', handleEnd, { once: true })
+      return
+    }
 
-  const handleDotNavigation = (index: number) => {
-    if (index === activeTestimonialIndex) return;
-    const direction = index > activeTestimonialIndex ? 'next' : 'prev'
     document.documentElement.classList.add(direction)
-    
-    const transition = document.startViewTransition(() => {
-      flushSync(() => {
-        setActiveTestimonialIndex(index)
-      })
+
+    const transition = startViewTransition(() => {
+      flushSync(update)
     })
 
     transition.finished.finally(() => {
@@ -90,6 +83,28 @@ const Testmonials = () => {
     })
   }
   
+  const handleNextTestimonial = () => {
+    runViewTransition('next', () => {
+      setActiveTestimonialIndex(prev => (prev + 1) % testimonialsArray.length)
+    })
+  }
+
+  const handlePrevTestimonial = () => {
+    runViewTransition('prev', () => {
+      setActiveTestimonialIndex(prev => (prev - 1 + testimonialsArray.length) % testimonialsArray.length)
+    })
+  }
+
+  const handleDotNavigation = (index: number) => {
+    if (index === activeTestimonialIndex) return
+
+    const direction: CarouselDirection = index > activeTestimonialIndex ? 'next' : 'prev'
+    
+    runViewTransition(direction, () => {
+      setActiveTestimonialIndex(index)
+    })
+  }
+
   return (
     <span className='testimonials'>
       <span className='carousel-wrapper'>

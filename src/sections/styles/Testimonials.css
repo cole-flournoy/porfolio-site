@@ -58,7 +58,20 @@
   text-align: center;
   height: 100%;
   place-content: center;
+  display: flex;
+  flex-direction: column;
   view-transition-name: quote;
+
+  /* Fallback for View Transition */
+  transition: opacity 800ms ease;
+}
+
+.quote.fallback-fade-out {
+  opacity: 0;
+}
+
+.quote.fallback-fade-in {
+  opacity: 1;
 }
 
 .quote .content {
@@ -125,7 +138,7 @@ html.prev::view-transition-new(quote) {
   html.prev::view-transition-new(quote) {
     animation: none;
   }
-  
+
   .dot,
   .icon-button {
     transition: none;

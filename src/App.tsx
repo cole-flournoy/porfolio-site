@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import './App.css'
 import About from './sections/About'
 import Socials from './sections/Socials'
-import Education from './sections/Education';
-import Contact from './sections/Contact';
-import Skills from './sections/Skills';
-import Build from './sections/Build';
-import Testmonials from './sections/Testimonials';
-import Experience from './sections/Experience';
+import Education from './sections/Education'
+import Contact from './sections/Contact'
+import Skills from './sections/Skills'
+import Build from './sections/Build'
+import Testmonials from './sections/Testimonials'
+import Experience from './sections/Experience'
 
 type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | 'experience' | null
 
 function App() {
-  const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null);
+  const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null)
 
   return (
     <div className='summary-grid-container'>
