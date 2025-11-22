@@ -54,3 +54,10 @@
   color: inherit;
 }
 
+.section-label {
+  color: var(--color-faded-light-text);
+  font-size: var(--text-size-header);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-header);
+  line-height: 34px;
+}

@@ -14,14 +14,9 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  text-align: center;
 }
 
 .socials-label {
-  color: var(--color-faded-light-text);
-  font-size: var(--text-size-header);
-  letter-spacing: var(--letter-spacing-header);
-
   /* Describes label entering view */
   transition: opacity 800ms ease, transform 800ms ease;
   transition-delay: 300ms;

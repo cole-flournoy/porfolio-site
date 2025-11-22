@@ -8,7 +8,7 @@ const Education = ({isHovered}: { isHovered: boolean }) => {
       {/* Starting view - label */}
       <span className='education-label' aria-hidden={isHovered ? 'true' : 'false'}>
         <GraduationIcon style={{ width: 'var(--icon-size-large)', height: 'var(--icon-size-large)', color: 'var(--color-faded-light-text)' }} />
-        <span style={{ fontSize: 'var(--text-size-header)', textAlign: 'center', letterSpacing: 'var(--letter-spacing-header)', color: 'var(--color-faded-light-text)' }}>
+        <span className='section-label'>
           EDUCATION
         </span>
       </span>

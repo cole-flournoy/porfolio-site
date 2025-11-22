@@ -20,7 +20,6 @@
 .education-label {
   gap: 5px;
   align-items: center;
-  text-align: center;
 
   /* Describes label entering view */
   transition: opacity 800ms ease, transform 800ms ease;

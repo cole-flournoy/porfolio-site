@@ -7,7 +7,7 @@ const Socials = ({isHovered}: { isHovered: boolean }  ) => {
   return (
     <span className={`socials ${isHovered ? 'hovered' : ''}`} style={{  }}>
       {/* Starting view - label */}
-      <span className='socials-label' aria-hidden={isHovered ? 'true' : 'false'} style={{ }}>
+      <span className='section-label socials-label' aria-hidden={isHovered ? 'true' : 'false'} style={{ }}>
         SOCIALS
       </span> 
       
