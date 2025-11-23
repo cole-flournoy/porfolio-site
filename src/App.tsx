@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import About from './sections/About'
 import Socials from './sections/Socials'
@@ -13,6 +13,24 @@ type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonia
 
 function App() {
   const [hoveredSection, setHoveredSection] = useState<HoveredSection>(null)
+
+  useEffect(() => {
+    // Initizalize Google Analytics
+    const id = import.meta.env.GA4_MEASUREMENT_ID
+
+    const script = document.createElement("script")
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`
+    document.head.appendChild(script)
+
+    window.dataLayer = window.dataLayer || []
+    window.gtag = function (...args: unknown[]) { 
+      window.dataLayer.push(...args) 
+    }
+
+    window.gtag("js", new Date())
+    window.gtag("config", id)
+  }, [])
 
   return (
     <div className='summary-grid-container'>
