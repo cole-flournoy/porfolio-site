@@ -15,7 +15,7 @@ type SkillName = 'TypeScript' | 'React.js' | 'Node.js' | 'PostgreSQL' | 'Git' | 
 const Skills = ({isHovered}: { isHovered: boolean }) => {
   const [hoveredSkill, setHoveredSkill] = useState<SkillName>(null)
 
-  const isContrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
+  const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
 
   const SkillIcon = ({ techName, iconComponent }: { techName: SkillName, iconComponent: React.JSX.Element }) => (
     <span style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseEnter={() => setHoveredSkill(techName)} onMouseLeave={() => setHoveredSkill(null)}>
@@ -32,7 +32,7 @@ const Skills = ({isHovered}: { isHovered: boolean }) => {
       <SkillIcon techName='Node.js' iconComponent={<NodeLogo className='icon' />} />
       <SkillIcon techName='PostgreSQL' iconComponent={<PostgresLogo className='icon' />} />
 
-    {!isContrainedScreen && 
+    {!isConstrainedScreen && 
       <span className='divider' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '75px', width: '1px' }}>
         <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
         <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'inherit', borderRadius: '50%', zIndex: 10 }}></span> 
