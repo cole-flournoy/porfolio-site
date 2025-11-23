@@ -3,11 +3,11 @@ import './styles/Contact.css'
 import { useMediaQuery } from 'react-responsive'
 
 const Contact = () => {
-  const isContrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
+  const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
 
   return (
-    <a href='mailto:contact@coleflournoy.com' className='contact'>
-      {isContrainedScreen ? 'Contact' : 'Contact Me'}
+    <a href='mailto:contact@coleflournoy.dev' className='contact'>
+      {isConstrainedScreen ? 'Contact' : 'Contact Me'}
       <PaperPlaneIcon style={{ width: '30px', height: '30px' }} />
       {/* Dots */}
       {/* <span style={{ position: 'absolute', top: '-0.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
