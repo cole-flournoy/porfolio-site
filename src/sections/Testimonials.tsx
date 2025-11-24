@@ -4,6 +4,7 @@ import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
 import './styles/Testimonials.css'
 import { flushSync } from "react-dom"
 import sendClickInteractionEvent from "../analytics/sendClickInteractionEvent"
+import sendWarningEvent from "../analytics/sendWarningEvent"
 
 interface Testimonial {
   name: string
@@ -56,6 +57,9 @@ const Testmonials = () => {
     // Fallback for browsers that don't support View Transitions API
     const quoteEl = document.querySelector('.quote') as HTMLElement | null
     if (!startViewTransition) {
+      // Analytics
+      sendWarningEvent('Testimonials', 'View Transitions API not supported')
+
       quoteEl?.classList.add('fallback-fade-out')
 
       const handleEnd = () => {
