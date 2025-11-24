@@ -12,6 +12,7 @@ import initializeAnalytics from './analytics/initializeAnalytics'
 import sendSectionHoverEvent from './analytics/sendSectionHoverEvent'
 
 type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | 'experience' | null
+export type GridSection = Exclude<HoveredSection, null> | 'about' | 'contact'
 
 initializeAnalytics()
 
