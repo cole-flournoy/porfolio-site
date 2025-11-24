@@ -58,7 +58,7 @@ const Testmonials = () => {
     const quoteEl = document.querySelector('.quote') as HTMLElement | null
     if (!startViewTransition) {
       // Analytics
-      sendWarningEvent('Testimonials', 'View Transitions API not supported')
+      sendWarningEvent('testimonials', 'View Transitions API not supported')
 
       quoteEl?.classList.add('fallback-fade-out')
 
@@ -90,7 +90,7 @@ const Testmonials = () => {
   
   const handleNextTestimonial = () => {
     // Analytics
-    sendClickInteractionEvent('Testimonials', 'Carousel arrow navigation')
+    sendClickInteractionEvent('testimonials', 'carousel arrow navigation')
 
     runViewTransition('next', () => {
       setActiveTestimonialIndex(prev => (prev + 1) % testimonialsArray.length)
@@ -99,7 +99,7 @@ const Testmonials = () => {
 
   const handlePrevTestimonial = () => {
     // Analytics
-    sendClickInteractionEvent('Testimonials', 'Carousel arrow navigation')
+    sendClickInteractionEvent('testimonials', 'carousel arrow navigation')
     
     runViewTransition('prev', () => {
       setActiveTestimonialIndex(prev => (prev - 1 + testimonialsArray.length) % testimonialsArray.length)
@@ -108,7 +108,7 @@ const Testmonials = () => {
 
   const handleDotNavigation = (index: number) => {
     // Analytics
-    sendClickInteractionEvent('Testimonials', 'Carousel dot navigation')
+    sendClickInteractionEvent('testimonials', 'carousel dot navigation')
     
     if (index === activeTestimonialIndex) return
 

@@ -6,7 +6,7 @@ import './styles/Build.css'
 const Build = ({isHovered}: { isHovered: boolean }) => {
   const handleClick = () => {
     if (isHovered) {
-      sendLinkClickEvent('Build', 'Build process document')
+      sendLinkClickEvent('build', 'build process document')
       window.open('https://github.com/cole-flournoy/portfolio-site?tab=readme-ov-file#portfolio-website', '_blank')
     }
   }

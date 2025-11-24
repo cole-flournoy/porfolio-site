@@ -7,7 +7,7 @@ const Contact = () => {
   const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
 
   return (
-    <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('Contact', 'Contact email')}>
+    <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('contact', 'contact email')}>
       {isConstrainedScreen ? 'Contact' : 'Contact Me'}
       <PaperPlaneIcon style={{ width: '30px', height: '30px' }} />
       {/* Dots */}
