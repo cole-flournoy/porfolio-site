@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Initizalize Google Analytics
-    const id = import.meta.env.VITE_GA4_MEASUREMENT_ID
+    const id = 'G-2VS13K0V9S'
 
     const script = document.createElement("script")
     script.async = true
