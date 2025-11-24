@@ -1,3 +1,4 @@
+import sendLinkClickEvent from '../analytics/sendLinkClickEvent'
 import PaperPlaneIcon from '../assets/paperplane_icon.svg?react'
 import './styles/Contact.css'
 import { useMediaQuery } from 'react-responsive'
@@ -6,7 +7,7 @@ const Contact = () => {
   const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
 
   return (
-    <a href='mailto:contact@coleflournoy.dev' className='contact'>
+    <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('Contact', 'Contact email')}>
       {isConstrainedScreen ? 'Contact' : 'Contact Me'}
       <PaperPlaneIcon style={{ width: '30px', height: '30px' }} />
       {/* Dots */}
