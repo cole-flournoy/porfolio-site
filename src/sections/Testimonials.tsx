@@ -3,6 +3,7 @@ import CaretRightIcon from '../assets/caret_right_icon.svg?react'
 import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
 import './styles/Testimonials.css'
 import { flushSync } from "react-dom"
+import sendClickInteractionEvent from "../analytics/sendClickInteractionEvent"
 
 interface Testimonial {
   name: string
@@ -84,18 +85,27 @@ const Testmonials = () => {
   }
   
   const handleNextTestimonial = () => {
+    // Analytics
+    sendClickInteractionEvent('Testimonials', 'Carousel arrow navigation')
+
     runViewTransition('next', () => {
       setActiveTestimonialIndex(prev => (prev + 1) % testimonialsArray.length)
     })
   }
 
   const handlePrevTestimonial = () => {
+    // Analytics
+    sendClickInteractionEvent('Testimonials', 'Carousel arrow navigation')
+    
     runViewTransition('prev', () => {
       setActiveTestimonialIndex(prev => (prev - 1 + testimonialsArray.length) % testimonialsArray.length)
     })
   }
 
   const handleDotNavigation = (index: number) => {
+    // Analytics
+    sendClickInteractionEvent('Testimonials', 'Carousel dot navigation')
+    
     if (index === activeTestimonialIndex) return
 
     const direction: CarouselDirection = index > activeTestimonialIndex ? 'next' : 'prev'
