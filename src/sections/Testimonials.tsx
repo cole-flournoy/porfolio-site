@@ -3,6 +3,8 @@ import CaretRightIcon from '../assets/caret_right_icon.svg?react'
 import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
 import './styles/Testimonials.css'
 import { flushSync } from "react-dom"
+import sendClickInteractionEvent from "../analytics/sendClickInteractionEvent"
+import sendWarningEvent from "../analytics/sendWarningEvent"
 
 interface Testimonial {
   name: string
@@ -55,6 +57,9 @@ const Testmonials = () => {
     // Fallback for browsers that don't support View Transitions API
     const quoteEl = document.querySelector('.quote') as HTMLElement | null
     if (!startViewTransition) {
+      // Analytics
+      sendWarningEvent('testimonials', 'View Transitions API not supported')
+
       quoteEl?.classList.add('fallback-fade-out')
 
       const handleEnd = () => {
@@ -84,18 +89,27 @@ const Testmonials = () => {
   }
   
   const handleNextTestimonial = () => {
+    // Analytics
+    sendClickInteractionEvent('testimonials', 'carousel arrow navigation')
+
     runViewTransition('next', () => {
       setActiveTestimonialIndex(prev => (prev + 1) % testimonialsArray.length)
     })
   }
 
   const handlePrevTestimonial = () => {
+    // Analytics
+    sendClickInteractionEvent('testimonials', 'carousel arrow navigation')
+    
     runViewTransition('prev', () => {
       setActiveTestimonialIndex(prev => (prev - 1 + testimonialsArray.length) % testimonialsArray.length)
     })
   }
 
   const handleDotNavigation = (index: number) => {
+    // Analytics
+    sendClickInteractionEvent('testimonials', 'carousel dot navigation')
+    
     if (index === activeTestimonialIndex) return
 
     const direction: CarouselDirection = index > activeTestimonialIndex ? 'next' : 'prev'

@@ -1,10 +1,18 @@
+import sendLinkClickEvent from '../analytics/sendLinkClickEvent'
 import WebpagesIcon from '../assets/tech_icons/webpages_icon.svg?react'
 import './styles/Build.css'
 
 
 const Build = ({isHovered}: { isHovered: boolean }) => {
+  const handleClick = () => {
+    if (isHovered) {
+      sendLinkClickEvent('build', 'build process document')
+      window.open('https://github.com/cole-flournoy/portfolio-site?tab=readme-ov-file#portfolio-website', '_blank')
+    }
+  }
+  
   return (
-    <span className={`section-label build ${isHovered ? 'hovered' : ''}`} onClick={() => isHovered ? window.open('https://github.com/cole-flournoy/portfolio-site?tab=readme-ov-file#portfolio-website', '_blank') : undefined}>
+    <span className={`section-label build ${isHovered ? 'hovered' : ''}`} onClick={() => handleClick()}>
       <span className='build-label' aria-hidden={isHovered ? 'true' : 'false'}>
         <WebpagesIcon style={{ width: 'var(--icon-size-large)', height: 'var(--icon-size-large)' }} />
         SITE BUILD
