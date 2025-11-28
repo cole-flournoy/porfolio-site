@@ -160,6 +160,8 @@ html.prev::view-transition-new(quote) {
 .testimonials .icon-button {
   height: 100%;
   color: var(--custom-mid-opacity);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .testimonials .icon-button:hover {

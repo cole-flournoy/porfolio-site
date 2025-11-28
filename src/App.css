@@ -69,4 +69,7 @@
   .grid-section {
     padding: 15px;
   }
+  .icon-button:hover {
+    transform: none;
+  }
 }
