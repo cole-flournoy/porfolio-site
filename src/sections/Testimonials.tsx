@@ -131,8 +131,8 @@ const Testmonials = () => {
         <span className='quote'>
           <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
           <span className='attribution-wrapper'>
-            <span style={{ fontSize: 'var(--text-size-medium)' }}>- {testimonialsArray[activeTestimonialIndex].name}</span>
-            <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
+            <span className='name'>- {testimonialsArray[activeTestimonialIndex].name}</span>
+            <span className='relationship'>{testimonialsArray[activeTestimonialIndex].relationship}</span>
           </span>
         </span>
         <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} style={{ }}/>

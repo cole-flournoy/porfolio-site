@@ -69,7 +69,7 @@ function App() {
           </div>
         </div>
         
-        <div className='grid-section' style={{ }}>
+        <div className='grid-section' style={{ padding: '15px 10px'}}>
           <Testmonials />
         </div>
       </div>
