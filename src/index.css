@@ -11,12 +11,12 @@
   /* --text-size-small: 0.8rem; */
  
  /* Responsive styles */
-  --text-size-header: clamp(1.4rem, calc(1vw + 0.8rem), 1.7rem);
+  --text-size-header: clamp(1.2rem, calc(1vw + 0.8rem), 1.7rem);
   --text-size-subheader: clamp(0.9rem, calc(1vw + 0.4rem), 1.3rem);
   --text-size-medium: clamp(0.8rem, calc(1vw + 0.2rem), 1.1rem);
   --text-size-small: clamp(0.6rem, calc(1vw + 0rem), 0.8rem);
 
-  --letter-spacing-header: clamp(2px, calc(0.2vw + 0.15rem), 5px); 
+  --letter-spacing-header: clamp(2px, calc(0.12rem), 5px); 
   --icon-size-large: clamp(70px, calc(5vw + 28px), 100px);
   --icon-size-standard: clamp(25px, calc(1.5vw + 14px), 35px);
   
