@@ -168,15 +168,12 @@ html.prev::view-transition-new(quote) {
 
 @media (max-width: 849px) {
   .quote .content {
-    font-size: calc(var(--text-size-subheader) - 0.1rem);
-    line-height: 15px;
+    font-size: calc(var(--text-size-subheader));
+    line-height: 18px;
   }
   .carousel-wrapper {
     gap: 5px;
-    min-height: 220px;
-  }
-  .testimonials .icon-button {
-    transform: none;
+    min-height: 250px;
   }
   .quote .attribution-wrapper {
     bottom: 5px;

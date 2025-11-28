@@ -25,7 +25,7 @@ const testimonialsArray: Testimonial[] = [
   {
     name: 'Jerry Dixon',
     relationship: 'Manager at Conductor Solar',
-    quote: 'What stood out most was how quickly he learned new technologies and took ownership of his work. Cole consistently impressed me with his initiative, attention to detail, and drive to get better every week.\n He\'s one of those people you can trust to take something on and make it happen'
+    quote: 'What stood out most was how quickly he learned new technologies and took ownership of his work. Cole consistently impressed me with his initiative, attention to detail, and drive to get better every week.\n He\'s one of those people you can trust to take something on and make it happen.'
   },
   {
     name: 'Cassie Lewis',
