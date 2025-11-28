@@ -63,7 +63,7 @@ function App() {
               <Education isHovered={true} />
             </div>
 
-            <div className='grid-section' style={{ }}>
+            <div className='grid-section' style={{ height: '100%' }}>
               <Build isHovered={true} />
             </div>
           </div>

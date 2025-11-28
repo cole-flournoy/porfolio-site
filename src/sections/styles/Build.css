@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  place-content: center;
 }
 
 .build.hovered {
@@ -40,6 +41,7 @@
 
 .build-detail {
   color: var(--color-light-text);
+  gap: 10px;
 
   /* Describes details exiting view */
   visibility: hidden;
@@ -71,5 +73,13 @@
   .build-detail {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+@media (max-width: 849px) {
+  .build-detail {
+    position: static;
+    line-height: normal;
+    font-size: calc(var(--text-size-header) - 0.1rem);
   }
 }
