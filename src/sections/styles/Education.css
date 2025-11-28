@@ -104,3 +104,13 @@
   height: var(--scalable-icon-size);
   color: var(--color-light-text);
 }
+
+@media (max-width: 849px) {
+  .education-checklist {
+    position: static;
+    padding: 0;
+  }
+  .checkbox-wrapper {
+    gap: 10px;
+  }
+}

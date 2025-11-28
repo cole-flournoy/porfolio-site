@@ -16,6 +16,15 @@
   justify-content: space-evenly;
 }
 
+@media (max-width: 849px) {
+  .socials-links {
+    flex-direction: column; 
+    position: static;
+    height: 100%;
+  }
+}
+
+
 .socials-label {
   /* Describes label entering view */
   transition: opacity 800ms ease, transform 800ms ease;

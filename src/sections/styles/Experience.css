@@ -13,6 +13,12 @@
   transition: color 300ms linear;
 }
 
+@media (max-width: 849px) {
+  .timeline {
+    color: var(--color-light-text);
+  }
+}
+
 .experience-section:hover .timeline{
   color: color-mix(in srgb, var(--color-light-text) 54%, white 46%);
 }
