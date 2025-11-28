@@ -17,6 +17,12 @@
   transition: transform 300ms, background-color 300ms linear;
 }
 
+@media (max-width: 849px) {
+  .contact {
+    background-color: color-mix(in srgb, var(--color-light-text) 5%, transparent 95%);
+  }
+}
+
 .contact-section:hover .contact {
   transform: scale(1.05);
 }

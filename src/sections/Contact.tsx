@@ -4,7 +4,7 @@ import './styles/Contact.css'
 import { useMediaQuery } from 'react-responsive'
 
 const Contact = () => {
-  const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px)' })
+  const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px, min-width: 850px)' })
 
   return (
     <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('contact', 'contact email')}>
