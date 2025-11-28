@@ -61,3 +61,12 @@
   letter-spacing: var(--letter-spacing-header);
   line-height: 34px;
 }
+
+@media (max-width: 849px) {
+  #root {
+    padding: 1rem 1rem; 
+  }
+  .grid-section {
+    padding: 15px;
+  }
+}
