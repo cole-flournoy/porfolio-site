@@ -10,13 +10,8 @@ const Contact = () => {
     <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('contact', 'contact email')}>
       {isButtonTooSmall ? 'Contact' : 'Contact Me'}
       <PaperPlaneIcon style={{ width: '30px', height: '30px' }} />
-      {/* Dots */}
-      {/* <span style={{ position: 'absolute', top: '-0.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
-      <span style={{ position: 'absolute', top: '-0.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'currentColor', borderRadius: '50%', zIndex: 10 }}></span> 
       
-      <span style={{ position: 'absolute', bottom: '-7.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
-      <span style={{ position: 'absolute', bottom: '-3.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'currentColor', borderRadius: '50%', zIndex: 10 }}></span> 
-       */}
+      {/* Dots */}
       <span style={{ position: 'absolute', top: '50%', left: '-0.5px', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
       <span style={{ position: 'absolute', top: '50%', left: '-0.5px', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'currentColor', borderRadius: '50%', zIndex: 10 }}></span> 
       
