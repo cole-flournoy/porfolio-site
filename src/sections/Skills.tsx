@@ -15,7 +15,7 @@ type SkillName = 'TypeScript' | 'React.js' | 'Node.js' | 'PostgreSQL' | 'Git' | 
 const Skills = ({isHovered}: { isHovered: boolean }) => {
   const [hoveredSkill, setHoveredSkill] = useState<SkillName>(null)
 
-  const isConstrainedScreen = useMediaQuery({ query: '(max-width: 1111px, min-width: 850px)' })
+  const isConstrainedScreen = useMediaQuery({ query: '(min-width: 850px) and (max-width: 1111px)' })
 
   const SkillIcon = ({ techName, iconComponent }: { techName: SkillName, iconComponent: React.JSX.Element }) => (
     <span style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }} onMouseEnter={() => setHoveredSkill(techName)} onMouseLeave={() => setHoveredSkill(null)}>
