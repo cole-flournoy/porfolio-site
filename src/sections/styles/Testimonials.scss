@@ -170,7 +170,7 @@ html.prev::view-transition-new(quote) {
   color: var(--color-slightly-faded-light-text);
 }
 
-@media (max-width: bp.$small-screen) {
+@media (max-width: bp.$small) {
   .quote .content {
     font-size: calc(var(--text-size-subheader));
     line-height: 18px;

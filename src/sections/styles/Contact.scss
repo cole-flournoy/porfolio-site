@@ -45,7 +45,7 @@
   }
 }
 
-@media (max-width: bp.$small-screen) {
+@media (max-width: bp.$small) {
   .contact {
     background-color: color-mix(in srgb, var(--color-light-text) 5%, transparent 95%);
   }

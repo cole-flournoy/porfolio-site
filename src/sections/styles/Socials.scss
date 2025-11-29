@@ -87,7 +87,7 @@
   .icon { transition: none !important; }
 }
 
-@media (max-width: bp.$small-screen) {
+@media (max-width: bp.$small) {
   .socials-links {
     flex-direction: column; 
     position: static;

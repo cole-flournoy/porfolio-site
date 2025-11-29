@@ -26,8 +26,9 @@ function App() {
     sendSectionHoverEvent(sectionName!)
   }
 
-  // const isMediumScreen = useMediaQuery({ query: '(min-width: 768px, max-width: 1110px)' })
-  const isSmallScreen = useMediaQuery({ query: `(max-width: ${bp.SMALL_SCREEN}px)` })
+  const isSmallScreen = useMediaQuery({ query: `(max-width: ${bp.SMALL}px)` })
+  const isMediumCompactScreen = useMediaQuery({ query: `(min-width: ${bp.SMALL + 1}px) and (max-width: ${bp.MEDIUM_1}px)` })
+  const isLargeScreen = useMediaQuery({ query: `(min-width: ${bp.MEDIUM_1 + 1}px)` })
 
 
   return (

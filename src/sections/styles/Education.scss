@@ -107,7 +107,7 @@
   color: var(--color-light-text);
 }
 
-@media (max-width: bp.$small-screen) {
+@media (max-width: bp.$small) {
   .education-checklist {
     position: static;
     padding: 0;

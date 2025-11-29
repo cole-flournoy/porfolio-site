@@ -1,2 +1,3 @@
-export const SMALL_SCREEN = 449
-export const MEDIUM_SCREEN = 849
+export const SMALL = 449
+export const MEDIUM_1 = 649
+export const MEDIUM_2 = 849
