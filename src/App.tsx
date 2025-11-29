@@ -33,8 +33,7 @@ function App() {
 
   return (
     <>
-      {isSmallScreen ? 
-
+      {isSmallScreen &&
       // SMALL SCREEN VIEW
       <div /* className='summary-grid-container' */ style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div className='grid-top-row' style={{ gap: '10px', width: '100%' }}>
@@ -75,9 +74,49 @@ function App() {
           <Testmonials />
         </div>
       </div>
-       
-       :
-      
+      }
+
+      {isMediumCompactScreen &&
+      // MEDIUM COMPACT SCREEN VIEW 
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)' }}>
+        <div className='grid-top-row'>
+          <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => sendSectionHoverEvent('about')}>
+            <About />
+          </div>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '50%' }}>
+            <div className='grid-section contact-section' style={{ height: '50%' }} onMouseEnter={() => sendSectionHoverEvent('contact')}>
+              <Contact />
+            </div>
+            <div className='grid-section' style={{ minHeight: '60px', height: '50%' }} onMouseEnter={() => handleMouseEnter('socials')} onMouseLeave={() => setHoveredSection(null)}>
+              <Socials isHovered={hoveredSection === 'socials'}/>
+            </div>
+          </div>
+        </div>
+          
+        <div className='grid-section experience-section' style={{  }} onMouseEnter={() => handleMouseEnter('experience')} onMouseLeave={() => setHoveredSection(null)}>
+          <Experience isHovered={hoveredSection === 'experience'} />
+        </div>
+
+        <div className='grid-bottom-row'>
+          <div className='grid-section' style={{ width: '25%' }} onMouseEnter={() => handleMouseEnter('skills')} onMouseLeave={() => setHoveredSection(null)}>
+            <Skills isHovered={hoveredSection === 'skills'} />
+          </div>
+          <div className='grid-section' style={{ width: '25%' }} onMouseEnter={() => handleMouseEnter('build')} onMouseLeave={() => setHoveredSection(null)}>
+            <Build isHovered={hoveredSection === 'build'} />
+          </div>
+          <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => handleMouseEnter('education')} onMouseLeave={() => setHoveredSection(null)}>
+            <Education isHovered={hoveredSection === 'education'} />
+          </div>     
+        </div>
+
+        <div className='grid-section' style={{ }} onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
+          <Testmonials />
+        </div>
+      </div>
+      }
+
+      {isLargeScreen &&
       // LARGE SCREEN VIEW 
       <div className='summary-grid-container'>
         <div className='grid-top-row'>

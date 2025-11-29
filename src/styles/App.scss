@@ -1,11 +1,11 @@
 @use '../styles/breakpoints.scss' as bp;
 
 #root {
+  --section-gap: 20px;
   padding: 2rem 3rem; 
 }
 
 .summary-grid-container {
-  --section-gap: 20px;
   display: grid;
   grid-template-rows: 1fr minmax(270px, 1fr);
   row-gap: var(--section-gap);
@@ -73,5 +73,12 @@
   }
   .icon-button:hover {
     transform: none;
+  }
+}
+
+@media (min-width: (bp.$small + 1)) and (max-width: bp.$medium-1) {
+  #root {
+    padding: 1.5rem; 
+    --section-gap: 15px;
   }
 }
