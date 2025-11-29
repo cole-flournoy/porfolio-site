@@ -7,7 +7,7 @@ import JiraLogo from '../assets/tech_icons/jira_logo.svg?react'
 import FigmaLogo from '../assets/tech_icons/figma_logo.svg?react'
 import VSCodeLogo from '../assets/tech_icons/vscode_logo.svg?react'
 import { useState } from 'react'
-import './styles/Skills.css'
+import './styles/Skills.scss'
 import { useMediaQuery } from 'react-responsive'
 
 type SkillName = 'TypeScript' | 'React.js' | 'Node.js' | 'PostgreSQL' | 'Git' | 'Jira' | 'Figma' | 'VSCode' | null

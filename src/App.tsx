@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.scss'
 import About from './sections/About'
 import Socials from './sections/Socials'
 import Education from './sections/Education'

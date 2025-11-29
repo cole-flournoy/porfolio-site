@@ -1,5 +1,5 @@
 import headshot from '../assets/portfolio_headshot.jpg'
-import './styles/About.css'
+import './styles/About.scss'
 
 const About = () => {
   return (

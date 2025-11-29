@@ -1,7 +1,7 @@
 import { useState } from "react"
 import CaretRightIcon from '../assets/caret_right_icon.svg?react'
 import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
-import './styles/Testimonials.css'
+import './styles/Testimonials.scss'
 import { flushSync } from "react-dom"
 import sendClickInteractionEvent from "../analytics/sendClickInteractionEvent"
 import sendWarningEvent from "../analytics/sendWarningEvent"

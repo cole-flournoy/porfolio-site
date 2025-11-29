@@ -1,6 +1,6 @@
 import GraduationIcon from '../assets/graduation_icon.svg?react'
 import CheckBoxIcon from '../assets/check_box_icon.svg?react'
-import './styles/Education.css'
+import './styles/Education.scss'
 
 const Education = ({isHovered}: { isHovered: boolean }) => {
   return (

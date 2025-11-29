@@ -1,6 +1,6 @@
 import sendLinkClickEvent from '../analytics/sendLinkClickEvent'
 import WebpagesIcon from '../assets/tech_icons/webpages_icon.svg?react'
-import './styles/Build.css'
+import './styles/Build.scss'
 import NavigateForwardIcon from '../assets/navigate_forward_icon.svg?react'
 
 

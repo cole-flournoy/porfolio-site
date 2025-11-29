@@ -1,6 +1,6 @@
 import sendLinkClickEvent from '../analytics/sendLinkClickEvent'
 import PaperPlaneIcon from '../assets/paperplane_icon.svg?react'
-import './styles/Contact.css'
+import './styles/Contact.scss'
 import { useMediaQuery } from 'react-responsive'
 
 const Contact = () => {
