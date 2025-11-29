@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 /* TODO: consolidate with variables or Socials styles */
 
 .education {
@@ -105,7 +107,7 @@
   color: var(--color-light-text);
 }
 
-@media (max-width: 849px) {
+@media (max-width: bp.$small-screen) {
   .education-checklist {
     position: static;
     padding: 0;

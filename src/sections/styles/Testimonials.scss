@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 /* TODO: Variables for maintainability */
 
 .testimonials {
@@ -168,7 +170,7 @@ html.prev::view-transition-new(quote) {
   color: var(--color-slightly-faded-light-text);
 }
 
-@media (max-width: 849px) {
+@media (max-width: bp.$small-screen) {
   .quote .content {
     font-size: calc(var(--text-size-subheader));
     line-height: 18px;

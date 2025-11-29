@@ -11,6 +11,7 @@ import Experience from './sections/Experience'
 import initializeAnalytics from './analytics/initializeAnalytics'
 import sendSectionHoverEvent from './analytics/sendSectionHoverEvent'
 import { useMediaQuery } from 'react-responsive'
+import * as bp from './constants/breakpoints'
 
 type HoveredSection = 'socials' | 'education' | 'skills' | 'build' | 'testimonials' | 'experience' | null
 export type GridSection = Exclude<HoveredSection, null> | 'about' | 'contact'
@@ -26,7 +27,7 @@ function App() {
   }
 
   // const isMediumScreen = useMediaQuery({ query: '(min-width: 768px, max-width: 1110px)' })
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 849px)' })
+  const isSmallScreen = useMediaQuery({ query: `(max-width: ${bp.SMALL_SCREEN}px)` })
 
 
   return (

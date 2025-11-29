@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 .build {
   position: relative;
   width: 100%;
@@ -76,7 +78,7 @@
   }
 }
 
-@media (max-width: 849px) {
+@media (max-width: bp.$small-screen) {
   .build-detail {
     position: static;
     line-height: normal;

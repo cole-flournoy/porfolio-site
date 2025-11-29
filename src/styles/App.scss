@@ -1,3 +1,5 @@
+@use '../styles/breakpoints.scss' as bp;
+
 #root {
   padding: 2rem 3rem; 
 }
@@ -62,7 +64,7 @@
   line-height: 34px;
 }
 
-@media (max-width: 849px) {
+@media (max-width: bp.$small-screen) {
   #root {
     padding: 1rem 1rem; 
   }
