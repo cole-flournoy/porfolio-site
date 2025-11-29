@@ -4,11 +4,11 @@ import './styles/Contact.scss'
 import { useMediaQuery } from 'react-responsive'
 
 const Contact = () => {
-  const isConstrainedScreen = useMediaQuery({ query: '(min-width: 850px) and (max-width: 1111px)' })
-
+  const isButtonTooSmall = useMediaQuery({ query: '(min-width: 850px) and (max-width: 1111px), (min-width: 450px) and (max-width: 500px)' })
+  
   return (
     <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('contact', 'contact email')}>
-      {isConstrainedScreen ? 'Contact' : 'Contact Me'}
+      {isButtonTooSmall ? 'Contact' : 'Contact Me'}
       <PaperPlaneIcon style={{ width: '30px', height: '30px' }} />
       {/* Dots */}
       {/* <span style={{ position: 'absolute', top: '-0.5px', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
