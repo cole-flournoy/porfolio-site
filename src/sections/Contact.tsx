@@ -4,7 +4,7 @@ import './styles/Contact.scss'
 import { useMediaQuery } from 'react-responsive'
 
 const Contact = () => {
-  const isButtonTooSmall = useMediaQuery({ query: '(min-width: 850px) and (max-width: 1111px), (min-width: 450px) and (max-width: 500px)' })
+  const isButtonTooSmall = useMediaQuery({ query: '(min-width: 850px) and (max-width: 1111px), (min-width: 450px) and (max-width: 510px)' })
   
   return (
     <a href='mailto:contact@coleflournoy.dev' className='contact' onClick={() => sendLinkClickEvent('contact', 'contact email')}>
