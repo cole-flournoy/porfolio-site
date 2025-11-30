@@ -33,9 +33,9 @@ const Skills = ({isHovered}: { isHovered: boolean }) => {
       <SkillIcon techName='PostgreSQL' iconComponent={<PostgresLogo className='icon' />} />
 
     {!isConstrainedScreen && 
-      <span className='divider' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '75px', width: '1px' }}>
-        <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '7px', width: '7px', backgroundColor: 'var(--color-grid-background)', borderRadius: '50%', zIndex: 5 }}></span> 
-        <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: '3px', width: '3px', backgroundColor: 'inherit', borderRadius: '50%', zIndex: 10 }}></span> 
+      <span className='divider'>
+        <span className='outer-dot'></span> 
+        <span className='inner-dot'></span> 
       </span>
     }     
 
