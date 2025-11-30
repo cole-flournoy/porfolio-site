@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 .skills {
   position: relative;
   display: grid;
@@ -67,6 +69,18 @@
 
     .divider {
       transition: none;
+    }
+  }
+}
+
+@media (min-width: #{bp.$medium_1 + 1}) and (max-width: bp.$medium-2) {
+  .skills {
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, auto);
+
+    .divider {
+      transform: translate(-50%, -50%) rotate(90deg);
     }
   }
 }
