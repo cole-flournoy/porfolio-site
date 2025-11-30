@@ -190,7 +190,7 @@ html.prev::view-transition-new(quote) {
   }
 }
 
-@media (min-width: (bp.$small + 1)) and (max-width: bp.$medium-1) {
+@media (min-width: #{bp.$small + 1}) and (max-width: bp.$medium-1) {
   .quote .content {
     line-height: 20px;
   }

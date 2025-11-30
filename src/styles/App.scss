@@ -76,7 +76,7 @@
   }
 }
 
-@media (min-width: (bp.$small + 1)) and (max-width: bp.$medium-1) {
+@media (min-width: #{bp.$small + 1}) and (max-width: bp.$medium-1) {
   #root {
     padding: 1.5rem; 
     --section-gap: 15px;
