@@ -36,8 +36,8 @@ function App() {
     <>
       {isSmallScreen &&
       // SMALL SCREEN VIEW
-      <div /* className='summary-grid-container' */ style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <div className='grid-top-row' style={{ gap: '10px', width: '100%' }}>
+      <div className='grid-column'>
+        <div className='grid-row' style={{ width: '100%' }}>
           <div className='grid-section' style={{ width: '85%' }}>
             <About />
           </div>
@@ -47,21 +47,21 @@ function App() {
           </div>
         </div>
       
-        <div className='grid-section experience-section' style={{ }}>
+        <div className='grid-section experience-section'>
           <Experience isHovered={false} />
         </div>
 
-        <div className='grid-section contact-section' style={{ }}>
+        <div className='grid-section contact-section'>
           <Contact />
         </div>
         
-        <div className='grid-top-row' style={{ gap: '10px', width: '100%' }}>
+        <div className='grid-row' style={{ width: '100%' }}>
           <div className='grid-section' style={{ width: '40%' }}>
             <Skills isHovered={true} />
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '60%' }}>
-            <div className='grid-section' style={{ }}>
+          <div className='grid-column' style={{ width: '60%' }}>
+            <div className='grid-section'>
               <Education isHovered={true} />
             </div>
 
@@ -79,13 +79,13 @@ function App() {
 
       {isMediumCompactScreen &&
       // MEDIUM COMPACT SCREEN VIEW 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)' }}>
-        <div className='grid-top-row'>
+      <div className='grid-column'>
+        <div className='grid-row'>
           <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => sendSectionHoverEvent('about')}>
             <About />
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '50%' }}>
+          <div className='grid-column' style={{ width: '50%' }}>
             <div className='grid-section contact-section' style={{ height: '50%' }} onMouseEnter={() => sendSectionHoverEvent('contact')}>
               <Contact />
             </div>
@@ -95,11 +95,11 @@ function App() {
           </div>
         </div>
           
-        <div className='grid-section experience-section' style={{  }} onMouseEnter={() => handleMouseEnter('experience')} onMouseLeave={() => setHoveredSection(null)}>
+        <div className='grid-section experience-section' onMouseEnter={() => handleMouseEnter('experience')} onMouseLeave={() => setHoveredSection(null)}>
           <Experience isHovered={hoveredSection === 'experience'} />
         </div>
 
-        <div className='grid-bottom-row'>
+        <div className='grid-row'>
           <div className='grid-section' style={{ width: '25%' }} onMouseEnter={() => handleMouseEnter('skills')} onMouseLeave={() => setHoveredSection(null)}>
             <Skills isHovered={hoveredSection === 'skills'} />
           </div>
@@ -111,7 +111,7 @@ function App() {
           </div>     
         </div>
 
-        <div className='grid-section' style={{ }} onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
+        <div className='grid-section' onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
           <Testmonials />
         </div>
       </div>
@@ -119,13 +119,13 @@ function App() {
 
       {isRegularMediumScreen &&
       // REGULAR MEDIUM SCREEN VIEW 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)' }}>
-        <div className='grid-top-row'>
+      <div className='grid-column'>
+        <div className='grid-row'>
           <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => sendSectionHoverEvent('about')}>
             <About />
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '50%' }}>
+          <div className='grid-column' style={{ width: '50%' }}>
             <div className='grid-section contact-section' style={{ height: '50%' }} onMouseEnter={() => sendSectionHoverEvent('contact')}>
               <Contact />
             </div>
@@ -135,8 +135,8 @@ function App() {
           </div>
         </div>
         
-        <div className='grid-top-row'>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '35%' }}>
+        <div className='grid-row'>
+          <div className='grid-column' style={{ width: '35%' }}>
             <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => handleMouseEnter('education')} onMouseLeave={() => setHoveredSection(null)}>
               <Education isHovered={hoveredSection === 'education'} />
             </div>     
@@ -150,7 +150,7 @@ function App() {
           </div>
         </div>
 
-        <div className='grid-top-row'>
+        <div className='grid-row'>
           <div className='grid-section' style={{ width: '85%' }} onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
             <Testmonials />
           </div>
@@ -158,15 +158,14 @@ function App() {
             <Build isHovered={hoveredSection === 'build'} />
           </div>
         </div>
-
       </div>
       }
 
       {isLargeScreen &&
       // LARGE SCREEN VIEW 
       <div className='summary-grid-container'>
-        <div className='grid-top-row'>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
+        <div className='grid-row'>
+          <div className='grid-column' style={{ width: '25%' }}>
             <div className='grid-section' style={{ height: '80%' }} onMouseEnter={() => sendSectionHoverEvent('about')}>
               <About />
             </div>
@@ -179,7 +178,7 @@ function App() {
             <Experience isHovered={hoveredSection === 'experience'} />
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '25%' }}>
+          <div className='grid-column' style={{ width: '25%' }}>
             <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => handleMouseEnter('education')} onMouseLeave={() => setHoveredSection(null)}>
               <Education isHovered={hoveredSection === 'education'} />
             </div>
@@ -189,7 +188,7 @@ function App() {
           </div>
         </div>
         
-        <div className='grid-bottom-row'>
+        <div className='grid-row'>
           <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => handleMouseEnter('skills')} onMouseLeave={() => setHoveredSection(null)}>
             <Skills isHovered={hoveredSection === 'skills'} />
           </div>
