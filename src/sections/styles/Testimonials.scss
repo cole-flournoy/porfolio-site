@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: 250px;
 }
 
 .dots-wrapper {
@@ -177,7 +178,6 @@ html.prev::view-transition-new(quote) {
   }
   .carousel-wrapper {
     gap: 5px;
-    min-height: 250px;
   }
   .quote .attribution-wrapper {
     bottom: 5px;
@@ -187,5 +187,11 @@ html.prev::view-transition-new(quote) {
   }
   .dots-wrapper {
     top: 10px;
+  }
+}
+
+@media (min-width: (bp.$small + 1)) and (max-width: bp.$medium-1) {
+  .quote .content {
+    line-height: 20px;
   }
 }
