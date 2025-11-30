@@ -28,7 +28,8 @@ function App() {
 
   const isSmallScreen = useMediaQuery({ query: `(max-width: ${bp.SMALL}px)` })
   const isMediumCompactScreen = useMediaQuery({ query: `(min-width: ${bp.SMALL + 1}px) and (max-width: ${bp.MEDIUM_1}px)` })
-  const isLargeScreen = useMediaQuery({ query: `(min-width: ${bp.MEDIUM_1 + 1}px)` })
+  const isRegularMediumScreen = useMediaQuery({ query: `(min-width: ${bp.MEDIUM_1 + 1}px) and (max-width: ${bp.MEDIUM_2}px)` })
+  const isLargeScreen = useMediaQuery({ query: `(min-width: ${bp.MEDIUM_2 + 1}px)` })
 
 
   return (
@@ -113,6 +114,51 @@ function App() {
         <div className='grid-section' style={{ }} onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
           <Testmonials />
         </div>
+      </div>
+      }
+
+      {isRegularMediumScreen &&
+      // REGULAR MEDIUM SCREEN VIEW 
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)' }}>
+        <div className='grid-top-row'>
+          <div className='grid-section' style={{ width: '50%' }} onMouseEnter={() => sendSectionHoverEvent('about')}>
+            <About />
+          </div>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '50%' }}>
+            <div className='grid-section contact-section' style={{ height: '50%' }} onMouseEnter={() => sendSectionHoverEvent('contact')}>
+              <Contact />
+            </div>
+            <div className='grid-section' style={{ minHeight: '60px', height: '50%' }} onMouseEnter={() => handleMouseEnter('socials')} onMouseLeave={() => setHoveredSection(null)}>
+              <Socials isHovered={hoveredSection === 'socials'}/>
+            </div>
+          </div>
+        </div>
+        
+        <div className='grid-top-row'>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--section-gap)', width: '35%' }}>
+            <div className='grid-section' style={{ height: '60%' }} onMouseEnter={() => handleMouseEnter('education')} onMouseLeave={() => setHoveredSection(null)}>
+              <Education isHovered={hoveredSection === 'education'} />
+            </div>     
+            <div className='grid-section' style={{ height: '40%' }} onMouseEnter={() => handleMouseEnter('skills')} onMouseLeave={() => setHoveredSection(null)}>
+              <Skills isHovered={hoveredSection === 'skills'} />
+            </div>
+          </div>
+
+          <div className='grid-section experience-section' style={{ width: '65%' }} onMouseEnter={() => handleMouseEnter('experience')} onMouseLeave={() => setHoveredSection(null)}>
+            <Experience isHovered={hoveredSection === 'experience'} />
+          </div>
+        </div>
+
+        <div className='grid-top-row'>
+          <div className='grid-section' style={{ width: '85%' }} onMouseEnter={() => handleMouseEnter('testimonials')} onMouseLeave={() => setHoveredSection(null)}>
+            <Testmonials />
+          </div>
+          <div className='grid-section' style={{ width: '15%' }} onMouseEnter={() => handleMouseEnter('build')} onMouseLeave={() => setHoveredSection(null)}>
+            <Build isHovered={hoveredSection === 'build'} />
+          </div>
+        </div>
+
       </div>
       }
 
