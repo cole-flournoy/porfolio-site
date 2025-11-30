@@ -1,5 +1,5 @@
 import Timeline from '../assets/timeline.svg?react'
-import './styles/Experience.css'
+import './styles/Experience.scss'
 
 const Experience = ({isHovered}: { isHovered: boolean }) => {
   return (

@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 /* TODO: consolidate with variables or Education styles */
 
 .socials {
@@ -83,4 +85,12 @@
   .socials-links > * { transition: none !important; transform: none !important; }
   .socials-links { visibility: visible; opacity: 1; pointer-events: auto; }
   .icon { transition: none !important; }
+}
+
+@media (max-width: bp.$small) {
+  .socials-links {
+    flex-direction: column; 
+    position: static;
+    height: 100%;
+  }
 }

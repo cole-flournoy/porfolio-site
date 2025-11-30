@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 /* TODO: Variables for maintainability */
 
 .testimonials {
@@ -16,6 +18,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: 250px;
 }
 
 .dots-wrapper {
@@ -89,6 +92,14 @@
   bottom: 15px;
 }
 
+.attribution-wrapper .name {
+  font-size: var(--text-size-medium);
+}
+
+.attribution-wrapper .relationship {
+  font-size: var(--text-size-small);
+}
+
 /* Carousel forward */
 html.next::view-transition-group(quote) {
   clip-path: inset(0);
@@ -152,8 +163,35 @@ html.prev::view-transition-new(quote) {
 .testimonials .icon-button {
   height: 100%;
   color: var(--custom-mid-opacity);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .testimonials .icon-button:hover {
   color: var(--color-slightly-faded-light-text);
+}
+
+@media (max-width: bp.$small) {
+  .quote .content {
+    font-size: calc(var(--text-size-subheader));
+    line-height: 18px;
+  }
+  .carousel-wrapper {
+    gap: 5px;
+  }
+  .quote .attribution-wrapper {
+    bottom: 5px;
+  }
+  .attribution-wrapper .name {
+    font-size: calc(var(--text-size-medium) - 0.1rem);
+  }
+  .dots-wrapper {
+    top: 10px;
+  }
+}
+
+@media (min-width: #{bp.$small + 1}) and (max-width: bp.$medium-1) {
+  .quote .content {
+    line-height: 20px;
+  }
 }

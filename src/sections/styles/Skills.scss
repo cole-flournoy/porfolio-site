@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 .skills {
   position: relative;
   display: grid;
@@ -19,6 +21,37 @@
   }
 }
 
+.divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 75px;
+  width: 1px;
+  transform: translate(-50%, -50%);
+
+  .outer-dot, .inner-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .outer-dot {
+    height: 7px;
+    width: 7px;
+    background-color: var(--color-grid-background);
+    z-index: 5;
+  }
+
+  .inner-dot {
+    height: 3px;
+    width: 3px;
+    background-color: inherit;
+    z-index: 10;
+  }
+}
+
 .skills.hovered {
   color: var(--color-slightly-faded-light-text);
   transition: color 300ms linear;
@@ -37,5 +70,13 @@
     .divider {
       transition: none;
     }
+  }
+}
+
+@media (min-width: #{bp.$medium_1 + 1}) and (max-width: bp.$medium-2) {
+  .skills {
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, auto);
   }
 }

@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 /* TODO: consolidate with variables or Socials styles */
 
 .education {
@@ -38,7 +40,8 @@
 
 .education-checklist {
   gap: 15px;
-  align-items: flex-start;
+  justify-self: center;
+  width: fit-content;
   padding: 10px;
   
   /* Describes checklist exiting view */
@@ -96,6 +99,8 @@
   font-size: var(--text-size-subheader);
   color: var(--color-light-text);
   gap: 15px;
+  justify-content: flex-start;
+  width: fit-content;
 }
 
 .checkbox-icon {
@@ -103,4 +108,18 @@
   width: var(--scalable-icon-size);
   height: var(--scalable-icon-size);
   color: var(--color-light-text);
+  margin-top: 1px;
+}
+
+@media (max-width: bp.$small) {
+  .education-checklist {
+    position: static;
+    padding: 0;
+  }
+  .checkbox-wrapper {
+    gap: 10px;
+  }
+  .checkbox-icon {
+    margin-top: 2px;
+  }
 }

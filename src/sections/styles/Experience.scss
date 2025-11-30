@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 .experience {
   display: flex;
   flex-direction: column;
@@ -12,6 +14,7 @@
   color: var(--color-slightly-faded-light-text);
   transition: color 300ms linear;
 }
+
 
 .experience-section:hover .timeline{
   color: color-mix(in srgb, var(--color-light-text) 54%, white 46%);
@@ -38,5 +41,11 @@
 @media (prefers-reduced-motion: reduce) {
   .timeline {
     transition: none;
+  }
+}
+
+@media (max-width: bp.$small) {
+  .timeline {
+    color: var(--color-light-text);
   }
 }

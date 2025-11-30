@@ -1,3 +1,5 @@
+@use '../../styles/breakpoints.scss' as bp;
+
 .contact {
   --scalable-padding-vertical: clamp(5px, .7vw, 10px);
 
@@ -40,5 +42,11 @@
 
   .contact-section:hover .contact {
     transform: none;
+  }
+}
+
+@media (max-width: bp.$small) {
+  .contact {
+    background-color: color-mix(in srgb, var(--color-light-text) 5%, transparent 95%);
   }
 }

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import CaretRightIcon from '../assets/caret_right_icon.svg?react'
 import CaretLeftIcon from '../assets/caret_left_icon.svg?react'
-import './styles/Testimonials.css'
+import './styles/Testimonials.scss'
 import { flushSync } from "react-dom"
 import sendClickInteractionEvent from "../analytics/sendClickInteractionEvent"
 import sendWarningEvent from "../analytics/sendWarningEvent"
@@ -25,7 +25,7 @@ const testimonialsArray: Testimonial[] = [
   {
     name: 'Jerry Dixon',
     relationship: 'Manager at Conductor Solar',
-    quote: 'What stood out most was how quickly he learned new technologies and took ownership of his work. Cole consistently impressed me with his initiative, attention to detail, and drive to get better every week.\n He\'s one of those people you can trust to take something on and make it happen'
+    quote: 'What stood out most was how quickly he learned new technologies and took ownership of his work. Cole consistently impressed me with his initiative, attention to detail, and drive to get better every week.\n He\'s one of those people you can trust to take something on and make it happen.'
   },
   {
     name: 'Cassie Lewis',
@@ -131,8 +131,8 @@ const Testmonials = () => {
         <span className='quote'>
           <span className='content'>"{testimonialsArray[activeTestimonialIndex].quote}"</span>
           <span className='attribution-wrapper'>
-            <span style={{ fontSize: 'var(--text-size-medium)' }}>- {testimonialsArray[activeTestimonialIndex].name}</span>
-            <span style={{ fontSize: 'var(--text-size-small)' }}>{testimonialsArray[activeTestimonialIndex].relationship}</span>
+            <span className='name'>- {testimonialsArray[activeTestimonialIndex].name}</span>
+            <span className='relationship'>{testimonialsArray[activeTestimonialIndex].relationship}</span>
           </span>
         </span>
         <CaretRightIcon className='icon-button' onClick={handleNextTestimonial} style={{ }}/>

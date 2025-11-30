@@ -1,9 +1,11 @@
+@use '../styles/breakpoints.scss' as bp;
+
 #root {
+  --section-gap: 20px;
   padding: 2rem 3rem; 
 }
 
 .summary-grid-container {
-  --section-gap: 20px;
   display: grid;
   grid-template-rows: 1fr minmax(270px, 1fr);
   row-gap: var(--section-gap);
@@ -11,11 +13,18 @@
   height: min(90vh, 700px);
 }
 
-.grid-top-row, 
-.grid-bottom-row {
+.grid-row,
+.grid-column {
   display: flex;
-  flex-direction: row;
   gap: var(--section-gap);
+}
+
+.grid-row {
+  flex-direction: row;
+}
+
+.grid-column {
+  flex-direction: column;
 }
 
 .grid-section {
@@ -60,4 +69,37 @@
   text-align: center;
   letter-spacing: var(--letter-spacing-header);
   line-height: 34px;
+}
+
+@media (max-width: bp.$small) {
+  #root {
+    padding: 1rem 1rem; 
+    --section-gap: 10px;
+  }
+  .grid-section {
+    padding: 15px;
+  }
+  .icon-button:hover {
+    transform: none;
+  }
+}
+
+@media (min-width: #{bp.$small + 1}) and (max-width: bp.$medium-1) {
+  #root {
+    padding: 1.5rem; 
+    --section-gap: 15px;
+  }
+  .grid-section {
+    padding: 15px;
+  }
+}
+
+@media (min-width: #{bp.$medium_1 + 1}) and (max-width: bp.$medium-2) {
+  #root {
+    padding: 1.5rem 2.5rem; 
+    --section-gap: 15px;
+  }
+  .grid-section {
+    padding: 15px;
+  }
 }

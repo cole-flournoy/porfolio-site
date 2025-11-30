@@ -1,6 +1,7 @@
 import sendLinkClickEvent from '../analytics/sendLinkClickEvent'
 import WebpagesIcon from '../assets/tech_icons/webpages_icon.svg?react'
-import './styles/Build.css'
+import './styles/Build.scss'
+import NavigateForwardIcon from '../assets/navigate_forward_icon.svg?react'
 
 
 const Build = ({isHovered}: { isHovered: boolean }) => {
@@ -20,6 +21,7 @@ const Build = ({isHovered}: { isHovered: boolean }) => {
 
       <span className='build-detail' aria-hidden={isHovered ? 'false' : 'true'}>
         READ THE BUILD DOC
+        <NavigateForwardIcon className='icon-button' style={{ }} />
       </span>
     </span>
   )

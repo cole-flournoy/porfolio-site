@@ -1,7 +1,7 @@
 import LinkedInLogo from '../assets/linkedin_icon.svg?react'
 import GitHubLogo from '../assets/github_icon.svg?react'
 import CodeIcon from '../assets/source_code_icon.svg?react'
-import './styles/Socials.css'
+import './styles/Socials.scss'
 
 const Socials = ({isHovered}: { isHovered: boolean }  ) => {
   return (
